@@ -1315,7 +1315,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linearThrust: 15
   angularThrust: 10
+  maxLinearVelocity: 35
   lateralDamping: 1
+  camLinearLerpSpeed: 10
+  camAngularLerpSpeed: 2
+  maxCamLookaheadDistance: 0.8
 --- !u!54 &1693678108
 Rigidbody:
   m_ObjectHideFlags: 0
