@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,7 +34,7 @@ public class SpaceshipController : MonoBehaviour
         //When the player thrusts forward, the camera should be moved up to be higher than the spaceship - so the player can see more of what's ahead of them
         //The amount the camera moves ahead of the spaceship is a function of the spaceship's velocity - higher velocity, further ahead
         //The maximum distance the camera can move ahead of the spaceship is the maxCamLookaheadAmount * half the camera's orthographic height
-        float t = Mathf.InverseLerp(0.0f, maxLinearVelocity, rb.linearVelocity.magnitude);
+        float t = Mathf.SmoothStep(0.0f, 1.0f, Mathf.InverseLerp(0.0f, maxLinearVelocity, rb.linearVelocity.magnitude));
         float camLookaheadAmount = Mathf.Lerp(0.0f, maxCamLookaheadAmount, t);
         Vector2 newCamPos = Vector2.Lerp(cam.transform.position, transform.position + rb.linearVelocity.normalized * camLookaheadAmount * cam.orthographicSize, camLinearLerpSpeed * Time.deltaTime);
         cam.transform.position = new Vector3(newCamPos.x, newCamPos.y, cam.transform.position.z);
@@ -57,9 +58,10 @@ public class SpaceshipController : MonoBehaviour
             Vector3 dir = rb.linearVelocity.normalized;
             rb.linearVelocity = dir * maxLinearVelocity;
         }
+
         rb.AddTorque(angularThrust * transform.forward * -moveState.x);
 
-        if(moveState.y > 0)
+        if (moveState.y > 0)
         {
             Vector3 localVelocity = transform.InverseTransformDirection(rb.linearVelocity);
             rb.AddForce(transform.right * -localVelocity.x * lateralDamping);
