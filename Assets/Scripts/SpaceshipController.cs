@@ -21,7 +21,8 @@ public class SpaceshipController : MonoBehaviour
 
     private void LateUpdate()
     {
-        _camera.transform.position = Vector3.Lerp(_camera.position, transform.position, 10f * Time.deltaTime);
+        Vector3 newPos = Vector3.Lerp(_camera.position, transform.position, 10f * Time.deltaTime);
+        _camera.transform.position = new Vector3(newPos.x, newPos.y, _camera.transform.position.z);
     }
 
     void FixedUpdate()
