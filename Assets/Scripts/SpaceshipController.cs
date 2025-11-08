@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,7 +35,7 @@ public class SpaceshipController : MonoBehaviour
         //The maximum distance the camera can move ahead of the spaceship is the maxCamLookaheadAmount * half the camera's orthographic height
         float t = Mathf.SmoothStep(0.0f, 1.0f, Mathf.InverseLerp(0.0f, maxLinearVelocity, rb.linearVelocity.magnitude));
         float camLookaheadAmount = Mathf.Lerp(0.0f, maxCamLookaheadAmount, t);
-        Vector2 newCamPos = Vector2.Lerp(cam.transform.position, transform.position + rb.linearVelocity.normalized * camLookaheadAmount * cam.orthographicSize, camLinearLerpSpeed * Time.deltaTime);
+        Vector2 newCamPos = Vector2.Lerp(cam.transform.position, transform.position + rb.linearVelocity.normalized * (camLookaheadAmount * cam.orthographicSize), camLinearLerpSpeed * Time.deltaTime);
         cam.transform.position = new Vector3(newCamPos.x, newCamPos.y, cam.transform.position.z);
 
         //Same as above, but increase the fov (orthographic size) when the spaceship is moving fast
@@ -51,7 +50,7 @@ public class SpaceshipController : MonoBehaviour
     {
         Vector2 moveState = moveAction.ReadValue<Vector2>();
 
-        rb.AddForce(linearThrust * transform.up * Mathf.Max(0, moveState.y));
+        rb.AddForce(transform.up * (linearThrust * Mathf.Max(0, moveState.y)));
         if (rb.linearVelocity.sqrMagnitude >= maxLinearVelocity * maxLinearVelocity)
         {
             //Player is moving faster than is permitted, clamp their velocity
@@ -59,12 +58,12 @@ public class SpaceshipController : MonoBehaviour
             rb.linearVelocity = dir * maxLinearVelocity;
         }
 
-        rb.AddTorque(angularThrust * transform.forward * -moveState.x);
+        rb.AddTorque(transform.forward * (angularThrust * -moveState.x));
 
         if (moveState.y > 0)
         {
             Vector3 localVelocity = transform.InverseTransformDirection(rb.linearVelocity);
-            rb.AddForce(transform.right * -localVelocity.x * lateralDamping);
+            rb.AddForce(transform.right * (-localVelocity.x * lateralDamping));
         }
     }
 }
