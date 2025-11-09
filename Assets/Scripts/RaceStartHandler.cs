@@ -5,9 +5,12 @@ using UnityEngine.InputSystem;
 
 public class RaceStartHandler : MonoBehaviour
 {
-    public UnityEvent OnCountdownBegin;
-    public UnityEvent OnCountdownEnd;
+    public static UnityEvent OnCountdownBegin = new();
+    public static UnityEvent OnCountdownEnd = new();
 
+    [SerializeField] private RectTransform _lapTimer;
+    [SerializeField] private RectTransform _leaderboard;
+    
     [SerializeField] private Transform _title;
     [SerializeField] private Transform _pressStart;
 
@@ -17,10 +20,19 @@ public class RaceStartHandler : MonoBehaviour
 
     private InputAction _moveAction;
 
+    private float _lapTimerStartingY;
+    private float _leaderboardStartingX;
+
     private void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
-
+        
+        _lapTimerStartingY = _lapTimer.anchoredPosition.y;
+        _lapTimer.anchoredPosition = new Vector2(_lapTimer.anchoredPosition.x, _lapTimer.sizeDelta.y);
+        
+        _leaderboardStartingX = _leaderboard.anchoredPosition.x;
+        _leaderboard.anchoredPosition = new Vector2(-_leaderboard.sizeDelta.x, _leaderboard.anchoredPosition.y);
+        
         _one.localScale = Vector3.zero;
         _two.localScale = Vector3.zero;
         _three.localScale = Vector3.zero;
@@ -56,6 +68,8 @@ public class RaceStartHandler : MonoBehaviour
             .ChainDelay(0.25f)
             .Chain(Tween.Scale(_one, 0.0f, 0.25f, Ease.InOutCubic))
             .Group(Tween.Scale(_title, 0.0f, 0.25f, Ease.InOutCubic))
+            .Group(Tween.UIAnchoredPositionY(_lapTimer, _lapTimerStartingY, 0.25f, Ease.InOutCubic))
+            .Group(Tween.UIAnchoredPositionX(_leaderboard, _leaderboardStartingX, 0.25f, Ease.InOutCubic))
             .OnComplete(() => OnCountdownEnd.Invoke());
     }
 }

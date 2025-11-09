@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 9049315891832058689}
   grapplePrefab: {fileID: 2249524925264321281, guid: 235576b366ba417158e20d452a3c4f5a, type: 3}
-  linearThrust: 24
+  linearThrust: 30
   angularThrust: 10
   lateralDamping: 1
   maxLinearVelocity: 35

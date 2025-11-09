@@ -11,11 +11,10 @@ public class SpaceshipController : MonoBehaviour
     private InputAction grappleAction;
 
     private Camera cam;
-    private RaceStartHandler raceStartHandler;
 
     private bool isControllable;
 
-    [Space] [SerializeField] private float linearThrust = 24.0f;
+    [Space] [SerializeField] private float linearThrust = 30.0f;
     [SerializeField] private float angularThrust = 10.0f;
 
     [SerializeField] private float lateralDamping = 1.0f;
@@ -29,16 +28,7 @@ public class SpaceshipController : MonoBehaviour
         grappleAction = InputSystem.actions.FindAction("Grapple");
 
         cam = Camera.main!;
-
-        raceStartHandler = FindAnyObjectByType<RaceStartHandler>();
-        if (!raceStartHandler)
-        {
-            Debug.LogWarning("No RaceStartHandler found in scene(???), race won't start and ship won't be controllable!");
-        }
-        else
-        {
-            raceStartHandler.OnCountdownEnd.AddListener(() => isControllable = true);
-        }
+        RaceStartHandler.OnCountdownEnd.AddListener(() => isControllable = true);
     }
 
     private void OnDrawGizmosSelected()
@@ -72,7 +62,7 @@ public class SpaceshipController : MonoBehaviour
 
         Vector3 engineWorldPos = transform.TransformPoint(enginePosition);
         rb.AddForceAtPosition(transform.up * (linearThrust * Mathf.Max(0, moveState.y)), engineWorldPos);
-        
+
         if (rb.linearVelocity.sqrMagnitude >= maxLinearVelocity * maxLinearVelocity)
         {
             //Player is moving faster than is permitted, clamp their velocity
