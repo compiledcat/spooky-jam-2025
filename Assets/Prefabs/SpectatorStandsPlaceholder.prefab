@@ -99,4 +99,4 @@ MonoBehaviour:
   _randomiseChildPositions: 1
   _moveAxis: {x: 1, y: 0, z: 0}
   _magnitude: 0.025
-  _speed: 4
+  _speed: 16

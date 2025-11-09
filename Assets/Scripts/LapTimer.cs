@@ -7,6 +7,7 @@ public class LapTimer : MonoBehaviour
     private bool _started;
     private float _startTime;
 
+    [SerializeField] private string _suffix;
     [SerializeField] private TextMeshProUGUI _text;
 
     private void OnValidate()
@@ -31,6 +32,6 @@ public class LapTimer : MonoBehaviour
 
         // format as 00:00.000
         var elapsedTime = TimeSpan.FromSeconds(Time.time - _startTime);
-        _text.text = elapsedTime.ToString(@"mm\:ss\.fff");
+        _text.text = _suffix + elapsedTime.ToString(@"mm\:ss\.fff");
     }
 }
