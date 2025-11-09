@@ -29,6 +29,19 @@ public class Track : MonoBehaviour
         _isDirty = false;
     }
 
+    [ContextMenu("Evenly space checkpoints")]
+    private void SetEvenlySpaced()
+    {
+        // set positions of existing array to be 1 / n apart
+        var count = _checkpointPositions.Length;
+        for (var i = 0; i < count; i++)
+        {
+            _checkpointPositions[i] = i / (float)count;
+        }
+
+        _isDirty = true;
+    }
+
     private void RegenerateCheckpoints()
     {
         if (!_splineContainer || !_checkpointPrefab || !_checkpointsParent) return;
