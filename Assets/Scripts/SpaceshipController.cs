@@ -4,15 +4,16 @@ using UnityEngine.InputSystem;
 public class SpaceshipController : MonoBehaviour
 {
     public Rigidbody rb;
+    private Camera cam;
+
     [SerializeField] private Grapple grapplePrefab;
     private Grapple grapple;
 
+    private bool isControllable;
     private InputAction moveAction;
     private InputAction grappleAction;
 
-    private Camera cam;
-
-    private bool isControllable;
+    private Asteroid _hoveredAsteroid;
 
     // start line is 1, we start having technically "passed" the start line (not physically true)
     public int reachedCheckpoint { get; private set; } = 1;
@@ -43,18 +44,38 @@ public class SpaceshipController : MonoBehaviour
     private void Update()
     {
         //Grapple
-        if (grappleAction.WasPressedThisFrame() && isControllable)
-        {
-            if (grapple)
-            {
-                Destroy(grapple.gameObject);
-            }
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
 
+        if (!grapple && Physics.Raycast(cam.ScreenPointToRay(mouseScreenPos), out var hit, 100f, LayerMask.GetMask("Asteroid")))
+        {
+            var asteroid = hit.collider.GetComponent<Asteroid>();
+
+            // we're hovering over a new asteroid
+            if (asteroid != _hoveredAsteroid)
+            {
+                // there was a previously hovered asteroid
+                if (_hoveredAsteroid)
+                {
+                    _hoveredAsteroid.Outline.enabled = false;
+                }
+
+                _hoveredAsteroid = asteroid;
+                _hoveredAsteroid.Outline.enabled = true;
+            }
+        }
+        else if (_hoveredAsteroid && !grapple)
+        {
+            _hoveredAsteroid.Outline.enabled = false;
+            _hoveredAsteroid = null;
+        }
+
+        if (grappleAction.WasPressedThisFrame() && _hoveredAsteroid)
+        {
+            if (grapple) Destroy(grapple.gameObject);
             grapple = Instantiate(grapplePrefab, transform);
 
-            Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
-            grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            // grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            grapple.Target = _hoveredAsteroid;
         }
 
         if (grappleAction.WasReleasedThisFrame() && grapple)
