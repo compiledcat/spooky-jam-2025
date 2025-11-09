@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504828177687766292}
+  - component: {fileID: 2249524925264321281}
   m_Layer: 0
   m_Name: Grapple
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   - {fileID: 2231932564982863705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2249524925264321281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088861309942768711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9116fcd7b25ad974087110ea943b444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
+  speed: 50
+  maxLength: 30
 --- !u!1 &5051178705055150301
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,9 +60,8 @@ GameObject:
   - component: {fileID: 4564528089395276723}
   - component: {fileID: 5965253277101508511}
   - component: {fileID: 7803246151283991054}
-  - component: {fileID: 7699415241986998693}
   m_Layer: 0
-  m_Name: Grapple
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +78,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1504828177687766292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,19 +156,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7699415241986998693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5051178705055150301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9116fcd7b25ad974087110ea943b444f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  speed: 20
-  parent: {fileID: 2088861309942768711}
-  maxLength: 30
