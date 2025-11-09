@@ -5,9 +5,13 @@ using UnityEngine.InputSystem;
 public class SpaceshipController : MonoBehaviour
 {
     private InputAction moveAction;
+    private InputAction grappleAction;
+    private InputAction grapplePositionAction;
     
     private bool isControllable;
     private RaceStartHandler raceStartHandler;
+
+    private Camera cam;
     
     [SerializeField] private float linearThrust = 24.0f;
     [SerializeField] private float angularThrust = 10.0f;
@@ -17,6 +21,9 @@ public class SpaceshipController : MonoBehaviour
 
     public Rigidbody rb;
     
+    [SerializeField] private GameObject grapplePrefab;
+    private GameObject grapple;
+    
     private void OnValidate()
     {
         rb ??= GetComponent<Rigidbody>();
@@ -25,6 +32,10 @@ public class SpaceshipController : MonoBehaviour
     private void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
+        grappleAction = InputSystem.actions.FindAction("Grapple");
+        grapplePositionAction = InputSystem.actions.FindAction("GrapplePosition");
+
+        cam = Camera.main!;
         
         raceStartHandler = FindAnyObjectByType<RaceStartHandler>();
         if (!raceStartHandler)
@@ -37,8 +48,29 @@ public class SpaceshipController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (grapple)
+        {
+            grapple.transform.position = transform.position;
+        }
+
+        //Grapple
+        if (grappleAction.WasPressedThisFrame())
+        {
+            Destroy(grapple);
+            grapple = Instantiate(grapplePrefab);
+            grapple.transform.position = transform.position;
+            
+            Vector2 screenPos = grapplePositionAction.ReadValue<Vector2>();
+            Vector3 worldPos = cam.ScreenToWorldPoint(screenPos);
+            grapple.GetComponentInChildren<Grapple>().targetPosition = new Vector3(worldPos.x, worldPos.y, transform.position.z);
+        }
+    }
+
     private void FixedUpdate()
     {
+        // Movement
         Vector2 moveState = isControllable ? moveAction.ReadValue<Vector2>() : Vector2.zero;
 
         rb.AddForce(transform.up * (linearThrust * Mathf.Max(0, moveState.y)));
