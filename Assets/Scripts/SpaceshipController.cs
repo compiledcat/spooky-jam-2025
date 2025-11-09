@@ -40,7 +40,7 @@ public class SpaceshipController : MonoBehaviour
     private void Update()
     {
         //Grapple
-        if (grappleAction.WasPressedThisFrame())
+        if (grappleAction.WasPressedThisFrame() && isControllable)
         {
             if (grapple)
             {
