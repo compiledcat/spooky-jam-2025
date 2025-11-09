@@ -3006,6 +3006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f13f7488b4bc141998ef0a40ecf968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _randomiseChildPositions: 0
   _moveAxis: {x: 0, y: 0, z: 1}
   _magnitude: 0.01
   _speed: 5
@@ -3107,6 +3108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f13f7488b4bc141998ef0a40ecf968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _randomiseChildPositions: 0
   _moveAxis: {x: 0, y: 0, z: 1}
   _magnitude: 0.007
   _speed: 5
