@@ -5,7 +5,7 @@ using UnityEngine.Splines;
 [ExecuteAlways]
 public class Track : MonoBehaviour
 {
-    [SerializeField] [Range(0f, 1f)] private float[] _checkpointPositions = Array.Empty<float>();
+    [field: SerializeField] [Range(0f, 1f)] public float[] CheckpointPositions { get; private set; } = Array.Empty<float>();
     [SerializeField] private SplineContainer _splineContainer;
 
     [SerializeField] private Transform _checkpointsParent;
@@ -33,10 +33,10 @@ public class Track : MonoBehaviour
     private void SetEvenlySpaced()
     {
         // set positions of existing array to be 1 / n apart
-        var count = _checkpointPositions.Length;
+        var count = CheckpointPositions.Length;
         for (var i = 0; i < count; i++)
         {
-            _checkpointPositions[i] = i / (float)count;
+            CheckpointPositions[i] = i / (float)count;
         }
 
         _isDirty = true;
@@ -57,7 +57,7 @@ public class Track : MonoBehaviour
 
         // create as many as needed
         var existingCount = _checkpointsParent.childCount;
-        var neededCount = _checkpointPositions.Length;
+        var neededCount = CheckpointPositions.Length;
 
         if (existingCount > neededCount)
         {
@@ -80,9 +80,9 @@ public class Track : MonoBehaviour
         }
 
         // modify all to correct position/rotation
-        for (var i = 0; i < _checkpointPositions.Length; i++)
+        for (var i = 0; i < CheckpointPositions.Length; i++)
         {
-            var t = _checkpointPositions[i];
+            var t = CheckpointPositions[i];
             var position = transform.TransformPoint(_splineContainer.Spline.EvaluatePosition(t));
             var rotation = Quaternion.LookRotation(_splineContainer.Spline.EvaluateTangent(t), -Vector3.forward);
 
