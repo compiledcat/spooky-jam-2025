@@ -21,6 +21,8 @@ public class SpaceshipController : MonoBehaviour
     [SerializeField] private float lateralDamping = 1.0f;
     public float maxLinearVelocity = 35.0f;
 
+    [SerializeField] private Vector3 enginePosition;
+
     private void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
@@ -37,6 +39,12 @@ public class SpaceshipController : MonoBehaviour
         {
             raceStartHandler.OnCountdownEnd.AddListener(() => isControllable = true);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(transform.TransformPoint(enginePosition), 0.25f);
     }
 
     private void Update()
@@ -62,7 +70,9 @@ public class SpaceshipController : MonoBehaviour
         // Movement
         Vector2 moveState = isControllable ? moveAction.ReadValue<Vector2>() : Vector2.zero;
 
-        rb.AddForce(transform.up * (linearThrust * Mathf.Max(0, moveState.y)));
+        Vector3 engineWorldPos = transform.TransformPoint(enginePosition);
+        rb.AddForceAtPosition(transform.up * (linearThrust * Mathf.Max(0, moveState.y)), engineWorldPos);
+        
         if (rb.linearVelocity.sqrMagnitude >= maxLinearVelocity * maxLinearVelocity)
         {
             //Player is moving faster than is permitted, clamp their velocity
