@@ -12,6 +12,8 @@ public class SpaceshipController : MonoBehaviour
     [SerializeField] private float camAngularLerpSpeed = 2.0f;
     [SerializeField] private float maxCamLookaheadAmount = 0.8f; //Multiplied by the camera's half-height
     [SerializeField] private float maxFovIncreaseAmount = 0.1f; //Multiplied by the camera's half-height
+    
+    private bool isControllable;
 
     private Rigidbody rb;
     private InputAction moveAction;
@@ -19,13 +21,25 @@ public class SpaceshipController : MonoBehaviour
     private Camera cam;
     private float camDefaultOrthoSize;
 
+    private RaceStartHandler raceStartHandler;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         moveAction = InputSystem.actions.FindAction("Move");
         
-        cam = Camera.main;
+        cam = Camera.main!;
         camDefaultOrthoSize = cam.orthographicSize;
+
+        raceStartHandler = FindAnyObjectByType<RaceStartHandler>();
+        if (!raceStartHandler)
+        {
+            Debug.LogWarning("No RaceStartHandler found in scene(???), ship won't be controllable!");
+        }
+        else
+        {
+            raceStartHandler.OnCountdownEnd.AddListener(() => isControllable = true);
+        }
     }
 
     private void LateUpdate()
@@ -48,7 +62,7 @@ public class SpaceshipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 moveState = moveAction.ReadValue<Vector2>();
+        Vector2 moveState = isControllable ? moveAction.ReadValue<Vector2>() : Vector2.zero;
 
         rb.AddForce(transform.up * (linearThrust * Mathf.Max(0, moveState.y)));
         if (rb.linearVelocity.sqrMagnitude >= maxLinearVelocity * maxLinearVelocity)

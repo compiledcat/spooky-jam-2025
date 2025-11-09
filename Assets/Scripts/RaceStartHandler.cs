@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class RaceStartHandler : MonoBehaviour
 {
-    public UnityEvent OnCountdownBegin; // todo place this event where needed
+    public UnityEvent OnCountdownBegin;
+    public UnityEvent OnCountdownEnd;
 
     [SerializeField] private Transform _title;
     [SerializeField] private Transform _pressStart;
@@ -54,6 +55,7 @@ public class RaceStartHandler : MonoBehaviour
             .Group(Tween.LocalEulerAngles(_one, new Vector3(0, 180, 0), new Vector3(0, 0, 0), 0.5f, Ease.InOutCubic))
             .ChainDelay(0.25f)
             .Chain(Tween.Scale(_one, 0.0f, 0.25f, Ease.InOutCubic))
-            .Group(Tween.Scale(_title, 0.0f, 0.25f, Ease.InOutCubic));
+            .Group(Tween.Scale(_title, 0.0f, 0.25f, Ease.InOutCubic))
+            .OnComplete(() => OnCountdownEnd.Invoke());
     }
 }
