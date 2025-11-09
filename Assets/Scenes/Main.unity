@@ -284,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6179322334521319859, guid: 01921091e65f858438dbfcf4c1ba70eb, type: 3}
       propertyPath: m_text
-      value: <mspace=0.65em>00:56.192
+      value: <mspace=0.65em>01:18.192
       objectReference: {fileID: 0}
     - target: {fileID: 7139975094479770438, guid: 01921091e65f858438dbfcf4c1ba70eb, type: 3}
       propertyPath: m_Name
@@ -394,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6179322334521319859, guid: 01921091e65f858438dbfcf4c1ba70eb, type: 3}
       propertyPath: m_text
-      value: <mspace=0.65em>01:16.891
+      value: <mspace=0.65em>01:28.891
       objectReference: {fileID: 0}
     - target: {fileID: 6179322334521319859, guid: 01921091e65f858438dbfcf4c1ba70eb, type: 3}
       propertyPath: m_fontSizeBase
@@ -3877,7 +3877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6179322334521319859, guid: 01921091e65f858438dbfcf4c1ba70eb, type: 3}
       propertyPath: m_text
-      value: <mspace=0.65em>00:48.320
+      value: <mspace=0.65em>01:13.320
       objectReference: {fileID: 0}
     - target: {fileID: 6179322334521319859, guid: 01921091e65f858438dbfcf4c1ba70eb, type: 3}
       propertyPath: m_hasFontAssetChanged
