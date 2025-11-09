@@ -1,7 +1,7 @@
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-public class ChildSquimbler : MonoBehaviour
+public class TextWaver : MonoBehaviour
 {
     private Vector3[] _originalPositions;
     [SerializeField] private Vector3 _moveAxis = Vector3.forward;

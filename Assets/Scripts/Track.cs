@@ -42,29 +42,54 @@ public class Track : MonoBehaviour
         _isDirty = true;
     }
 
+    [ContextMenu("Regenerate")]
     private void RegenerateCheckpoints()
     {
+        if (Application.isPlaying)
+        {
+            Debug.LogWarning("Track checkpoints should not be changed at runtime - not updating.");
+            return;
+        }
+
+#if UNITY_EDITOR
+        // we use prefabs so they'll update automatically, we just need to create/remove as needed and update position/rotation
         if (!_splineContainer || !_checkpointPrefab || !_checkpointsParent) return;
 
-        // clear existing
-        var existingCheckpoints = new Transform[_checkpointsParent.childCount];
-        for (var i = 0; i < _checkpointsParent.childCount; i++)
+        // create as many as needed
+        var existingCount = _checkpointsParent.childCount;
+        var neededCount = _checkpointPositions.Length;
+
+        if (existingCount > neededCount)
         {
-            existingCheckpoints[i] = _checkpointsParent.GetChild(i);
+            // remove excess
+            var excess = existingCount - neededCount;
+            for (var i = 0; i < excess; i++)
+            {
+                var toDestroy = _checkpointsParent.GetChild(existingCount - 1 - i);
+                DestroyImmediate(toDestroy.gameObject);
+            }
+        }
+        else if (neededCount > existingCount)
+        {
+            // add missing
+            var toAdd = neededCount - existingCount;
+            for (var i = 0; i < toAdd; i++)
+            {
+                UnityEditor.PrefabUtility.InstantiatePrefab(_checkpointPrefab, _checkpointsParent);
+            }
         }
 
-        foreach (var child in existingCheckpoints)
+        // modify all to correct position/rotation
+        for (var i = 0; i < _checkpointPositions.Length; i++)
         {
-            DestroyImmediate(child.gameObject);
-        }
-
-        // create new
-        foreach (var t in _checkpointPositions)
-        {
+            var t = _checkpointPositions[i];
             var position = transform.TransformPoint(_splineContainer.Spline.EvaluatePosition(t));
             var rotation = Quaternion.LookRotation(_splineContainer.Spline.EvaluateTangent(t), -Vector3.forward);
 
-            Instantiate(_checkpointPrefab, position, rotation, _checkpointsParent);
+            var checkpoint = _checkpointsParent.GetChild(i);
+            checkpoint.position = position;
+            checkpoint.rotation = rotation;
+#endif
         }
     }
 }
