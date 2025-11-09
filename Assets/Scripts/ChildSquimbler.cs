@@ -17,9 +17,8 @@ public class ChildSquimbler : MonoBehaviour
             var lastOffset = Mathf.Sin(_lastTime * _speed + i) * _magnitude * sign;
             var offset = Mathf.Sin(Time.time * _speed + i) * _magnitude * sign;
             
-            // work from original position, allows effects to be stacked
-            child.localPosition -= _moveAxis * lastOffset;
-            child.localPosition += _moveAxis * offset;
+            // apply difference from last frame, allows effects to be stacked
+            child.localPosition += _moveAxis * (offset - lastOffset);
         }
         
         _lastTime = Time.time;
