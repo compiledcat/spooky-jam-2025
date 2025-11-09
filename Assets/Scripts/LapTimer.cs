@@ -13,6 +13,7 @@ public class LapTimer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
 
     [SerializeField] private Track _track;
+    [SerializeField] private SpaceshipController _ship;
 
     private void OnValidate()
     {
@@ -38,7 +39,7 @@ public class LapTimer : MonoBehaviour
 
         _text.text = _format
             .Replace("{timer}", elapsedTime.ToString(@"mm\:ss\.fff"))
-            .Replace("{checkpoint}", "0")
+            .Replace("{checkpoint}", _ship.reachedCheckpoint.ToString())
             .Replace("{checkpointCount}", _track.CheckpointPositions.Length.ToString());
     }
 

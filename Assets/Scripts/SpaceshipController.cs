@@ -14,6 +14,9 @@ public class SpaceshipController : MonoBehaviour
 
     private bool isControllable;
 
+    // start line is 1, we start having technically "passed" the start line (not physically true)
+    public int reachedCheckpoint { get; private set; } = 1;
+
     [Space] [SerializeField] private float linearThrust = 30.0f;
     [SerializeField] private float angularThrust = 10.0f;
 
@@ -77,5 +80,11 @@ public class SpaceshipController : MonoBehaviour
             Vector3 localVelocity = transform.InverseTransformDirection(rb.linearVelocity);
             rb.AddForce(transform.right * (-localVelocity.x * lateralDamping));
         }
+    }
+
+    public void PassCheckpoint(int checkpointNum)
+    {
+        if (checkpointNum <= reachedCheckpoint) return;
+        reachedCheckpoint = checkpointNum;
     }
 }

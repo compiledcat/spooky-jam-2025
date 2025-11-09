@@ -5,11 +5,14 @@ using UnityEngine.Splines;
 [ExecuteAlways]
 public class Track : MonoBehaviour
 {
-    [field: SerializeField] [Range(0f, 1f)] public float[] CheckpointPositions { get; private set; } = Array.Empty<float>();
+    [field: SerializeField]
+    [field: Range(0f, 1f)]
+    public float[] CheckpointPositions { get; private set; } = Array.Empty<float>();
+
     [SerializeField] private SplineContainer _splineContainer;
 
     [SerializeField] private Transform _checkpointsParent;
-    [SerializeField] private Transform _checkpointPrefab;
+    [SerializeField] private Checkpoint _checkpointPrefab;
 
     private bool _isDirty;
 
@@ -62,11 +65,9 @@ public class Track : MonoBehaviour
         if (existingCount > neededCount)
         {
             // remove excess
-            var excess = existingCount - neededCount;
-            for (var i = 0; i < excess; i++)
+            for (var i = existingCount - 1; i >= neededCount; i--)
             {
-                var toDestroy = _checkpointsParent.GetChild(existingCount - 1 - i);
-                DestroyImmediate(toDestroy.gameObject);
+                DestroyImmediate(_checkpointsParent.GetChild(i).gameObject);
             }
         }
         else if (neededCount > existingCount)
@@ -86,10 +87,14 @@ public class Track : MonoBehaviour
             var position = transform.TransformPoint(_splineContainer.Spline.EvaluatePosition(t));
             var rotation = Quaternion.LookRotation(_splineContainer.Spline.EvaluateTangent(t), -Vector3.forward);
 
-            var checkpoint = _checkpointsParent.GetChild(i);
-            checkpoint.position = position;
-            checkpoint.rotation = rotation;
-#endif
+            var checkpoint = _checkpointsParent.GetChild(i).GetComponent<Checkpoint>();
+            checkpoint.transform.position = position;
+            checkpoint.transform.rotation = rotation;
+            checkpoint.name = $"Checkpoint {i + 1}";
+            checkpoint.CheckpointNum = i + 1;
+
+            UnityEditor.EditorUtility.SetDirty(checkpoint);
         }
+#endif
     }
 }
