@@ -18,15 +18,11 @@ public class RaceStartHandler : MonoBehaviour
     [SerializeField] private Transform _two;
     [SerializeField] private Transform _three;
 
-    private InputAction _moveAction;
-
     private float _lapTimerStartingY;
     private float _leaderboardStartingX;
 
     private void Start()
     {
-        _moveAction = InputSystem.actions.FindAction("Move");
-
         _lapTimerStartingY = _lapTimer.anchoredPosition.y;
         _lapTimer.anchoredPosition = new Vector2(_lapTimer.anchoredPosition.x, _lapTimer.sizeDelta.y);
 
