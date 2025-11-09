@@ -448,7 +448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 7.5}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.77, y: -0.21}
+  m_AnchoredPosition: {x: -0.86, y: -0.21}
   m_SizeDelta: {x: 25, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142914469
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ("W" on the keyboard)
+  m_text: (or any key!)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36864df729526c6449cb6725360da366, type: 2}
   m_sharedMaterial: {fileID: -6477611709653934495, guid: 36864df729526c6449cb6725360da366, type: 2}

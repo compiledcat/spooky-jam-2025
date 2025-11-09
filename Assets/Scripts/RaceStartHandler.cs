@@ -10,7 +10,7 @@ public class RaceStartHandler : MonoBehaviour
 
     [SerializeField] private RectTransform _lapTimer;
     [SerializeField] private RectTransform _leaderboard;
-    
+
     [SerializeField] private Transform _title;
     [SerializeField] private Transform _pressStart;
 
@@ -26,13 +26,13 @@ public class RaceStartHandler : MonoBehaviour
     private void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
-        
+
         _lapTimerStartingY = _lapTimer.anchoredPosition.y;
         _lapTimer.anchoredPosition = new Vector2(_lapTimer.anchoredPosition.x, _lapTimer.sizeDelta.y);
-        
+
         _leaderboardStartingX = _leaderboard.anchoredPosition.x;
         _leaderboard.anchoredPosition = new Vector2(-_leaderboard.sizeDelta.x, _leaderboard.anchoredPosition.y);
-        
+
         _one.localScale = Vector3.zero;
         _two.localScale = Vector3.zero;
         _three.localScale = Vector3.zero;
@@ -42,7 +42,9 @@ public class RaceStartHandler : MonoBehaviour
 
     private void Update()
     {
-        if (_moveAction.ReadValue<Vector2>().y > 0)
+        var anyKeyPressed = Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame;
+
+        if (anyKeyPressed)
         {
             OnCountdownBegin.Invoke();
             OnCountdownBegin.RemoveListener(AnimateCountdown);
