@@ -1,0 +1,99 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1813623713",
+    "Type": "User",
+    "GUID": "{DB19DD85-AA6A-40CD-AE1D-B78BAB119F3E}",
+    "Language": "SFX",
+    "Hash": "{CC551510-5151-CDD9-7339-FA34CAD5F8D5}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Maain",
+    "ShortName": "Maain",
+    "Path": "Maain.bnk",
+    "Media": [
+     {
+      "Id": "33302142",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "85/{85F4D563-65C5-F2B4-1C19-7B6587CCCDB8}.wem"
+     },
+     {
+      "Id": "243485007",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "3, 2, 1... Go!.wav",
+      "CachePath": "F3/{F3EBB42B-E1EA-6308-92AA-A6F892EA4350}.wem"
+     },
+     {
+      "Id": "489511010",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "C8/{C82F4B0D-5F7E-CA6E-E101-E0FC82784BE0}.wem"
+     },
+     {
+      "Id": "671507770",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Crowd Cheering.wav",
+      "CachePath": "D6/{D6206750-F44B-5E8F-7157-5A33BD8C1C21}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "412724365",
+      "Name": "BGM",
+      "ObjectPath": "\\Events\\Default Work Unit\\BGM",
+      "GUID": "{33AE4BD6-CA38-4A83-9FD5-FCD05CE3E7FE}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "33302142"
+       },
+       {
+        "Id": "489511010"
+       }
+      ]
+     },
+     {
+      "Id": "751466621",
+      "Name": "CrowdCheering",
+      "ObjectPath": "\\Events\\Default Work Unit\\CrowdCheering",
+      "GUID": "{A2B71F6A-3BA3-46C2-9A29-DE0A3681EF0A}",
+      "MaxAttenuation": "100",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "671507770"
+       }
+      ]
+     },
+     {
+      "Id": "625825150",
+      "Name": "Three_Two_One_Go",
+      "ObjectPath": "\\Events\\Default Work Unit\\Three_Two_One_Go",
+      "GUID": "{5FD0C702-3010-422D-90F5-0802C58F3B0A}",
+      "DurationType": "OneShot",
+      "DurationMin": "13.469313",
+      "DurationMax": "13.469313",
+      "MediaRefs": [
+       {
+        "Id": "243485007"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C2D5D362-7669-FC46-45CF-575D95EA1770}"
+ }
+}

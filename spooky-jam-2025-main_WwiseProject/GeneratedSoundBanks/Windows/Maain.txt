@@ -1,0 +1,19 @@
+Event	ID	Name			Wwise Object Path	Notes
+	412724365	BGM			\Default Work Unit\BGM	
+	625825150	Three_Two_One_Go			\Default Work Unit\Three_Two_One_Go	
+	751466621	CrowdCheering			\Default Work Unit\CrowdCheering	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	412724365	BGM			\Default Work Unit\BGM	
+
+State	ID	Name	State Group			Notes
+	748895195	None	BGM			
+	1189781957	BGM2	BGM			
+	1189781958	BGM1	BGM			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	33302142	BGM1	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\85\{85F4D563-65C5-F2B4-1C19-7B6587CCCDB8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM1		594292
+	243485007	3, 2, 1___ Go!	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\F3\{F3EBB42B-E1EA-6308-92AA-A6F892EA4350}.wem		\Actor-Mixer Hierarchy\Default Work Unit\3, 2, 1___ Go!		2586204
+	489511010	BGM2	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\C8\{C82F4B0D-5F7E-CA6E-E101-E0FC82784BE0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM2		596052
+	671507770	Crowd Cheering	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\D6\{D6206750-F44B-5E8F-7157-5A33BD8C1C21}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd Cheering		1687012
+

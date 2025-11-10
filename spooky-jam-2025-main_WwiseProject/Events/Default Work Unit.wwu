@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="BGM" ID="{33AE4BD6-CA38-4A83-9FD5-FCD05CE3E7FE}">
+					<ChildrenList>
+						<Action Name="" ID="{79706B77-06C7-4E74-867A-20236A711B19}" ShortID="411109881">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM1" ID="{9EBD4FB0-E0BD-4D26-9DE6-80206973F97D}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C9186208-FD9E-4A75-A480-7AB8F7768F0D}" ShortID="645233879">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM2" ID="{90BC2497-ACA2-45F6-B970-8FA885CBF6C7}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Three_Two_One_Go" ID="{5FD0C702-3010-422D-90F5-0802C58F3B0A}">
+					<ChildrenList>
+						<Action Name="" ID="{04B7EDE2-43FE-43F6-9C64-0FF22241D058}" ShortID="968970933">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="3, 2, 1___ Go!" ID="{40BFF066-F850-48EB-B00E-9C09D184FEE8}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="CrowdCheering" ID="{A2B71F6A-3BA3-46C2-9A29-DE0A3681EF0A}">
+					<ChildrenList>
+						<Action Name="" ID="{8C93B276-C142-475F-A048-EA3254320A54}" ShortID="148571694">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Crowd Cheering" ID="{A0134221-42A1-4845-9F34-440A1D276D94}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

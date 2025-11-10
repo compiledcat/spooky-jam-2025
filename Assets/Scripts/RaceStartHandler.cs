@@ -7,6 +7,9 @@ public class RaceStartHandler : MonoBehaviour
 {
     public static UnityEvent OnCountdownBegin = new();
     public static UnityEvent OnCountdownEnd = new();
+    public AK.Wwise.Event TTOGo;
+    public AK.Wwise.Event BGM;
+    public AK.Wwise.Event CrowdCheer;
 
     [SerializeField] private RectTransform _lapTimer;
     [SerializeField] private RectTransform _leaderboard;
@@ -20,16 +23,6 @@ public class RaceStartHandler : MonoBehaviour
 
     private float _lapTimerStartingY;
     private float _leaderboardStartingX;
-
-    [SerializeField] private bool _debugSpeedUp;
-
-    private void Awake()
-    {
-#if !UNITY_EDITOR
-        // disable debug speedup outside editor
-        _debugSpeedUp = false;
-#endif
-    }
 
     private void Start()
     {
@@ -50,7 +43,7 @@ public class RaceStartHandler : MonoBehaviour
     {
         var anyKeyPressed = Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame;
 
-        if (_debugSpeedUp || anyKeyPressed)
+        if (anyKeyPressed)
         {
             OnCountdownBegin.Invoke();
             OnCountdownBegin.RemoveListener(AnimateCountdown);
@@ -60,9 +53,11 @@ public class RaceStartHandler : MonoBehaviour
     [ContextMenu("StartCountdown")] // for debugging
     private void AnimateCountdown()
     {
-        Tween.Scale(_pressStart, 0.0f, 0.5f, Ease.InOutCubic);
+        TTOGo.Post(gameObject);
+        BGM.Post(gameObject);
+        CrowdCheer.Post(gameObject);
 
-        if (_debugSpeedUp) Time.timeScale = 4;
+        Tween.Scale(_pressStart, 0.0f, 0.5f, Ease.InOutCubic);
 
         Sequence.Create()
             .Chain(Tween.Scale(_three, 1.0f, 0.5f, Ease.InOutCubic))
@@ -80,10 +75,6 @@ public class RaceStartHandler : MonoBehaviour
             .Group(Tween.Scale(_title, 0.0f, 0.25f, Ease.InOutCubic))
             .Group(Tween.UIAnchoredPositionY(_lapTimer, _lapTimerStartingY, 0.25f, Ease.InOutCubic))
             .Group(Tween.UIAnchoredPositionX(_leaderboard, _leaderboardStartingX, 0.25f, Ease.InOutCubic))
-            .OnComplete(() =>
-            {
-                if (_debugSpeedUp) Time.timeScale = 1;
-                OnCountdownEnd.Invoke();
-            });
+            .OnComplete(() => OnCountdownEnd.Invoke());
     }
 }

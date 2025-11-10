@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320d7f59ec0e5664f8f107cbf03dc475, type: 3}
+  m_Name: A2B71F6A-3BA3-46C2-9A29-DE0A3681EF0A
+  m_EditorClassIdentifier: 
+  objectName: CrowdCheering
+  id: 751466621
+  guid: A2B71F6A-3BA3-46C2-9A29-DE0A3681EF0A
+  IsInUserDefinedSoundBank: 1

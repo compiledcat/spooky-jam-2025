@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3F76D626-8405-4989-9363-3B711E6F468C}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{3F76D626-8405-4989-9363-3B711E6F468C}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Maain" ID="{DB19DD85-AA6A-40CD-AE1D-B78BAB119F3E}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Three_Two_One_Go" ID="{5FD0C702-3010-422D-90F5-0802C58F3B0A}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="CrowdCheering" ID="{A2B71F6A-3BA3-46C2-9A29-DE0A3681EF0A}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BGM" ID="{33AE4BD6-CA38-4A83-9FD5-FCD05CE3E7FE}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -1,0 +1,36 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "spooky-jam-2025-main_WwiseProject",
+   "GUID": "{B347059B-D90C-4B45-8812-2A45F9237AAE}",
+   "Generator": "2024.1.8.8898"
+  },
+  "CacheRoot": "../../../../spooky-jam-2025-main_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Mac",
+    "GUID": "{6C89F52E-673F-476B-9FD8-5F648FF829AC}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../spooky-jam-2025-main_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{43D1423C-9BA1-40F3-A825-FA55425798F0}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../spooky-jam-2025-main_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{665A0E31-A40E-40CB-BA52-C6F6E91886E3}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{E2E43445-2F3E-B577-C88B-17C173243EA4}"
+ }
+}
