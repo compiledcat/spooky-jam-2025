@@ -49,6 +49,10 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   speed: 75
   maxLength: 30
+  GrappleWub:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4ef90eb3607a31445b47133377f2312a, type: 2}
 --- !u!54 &-64547837247761627
 Rigidbody:
   m_ObjectHideFlags: 0

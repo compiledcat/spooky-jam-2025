@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpaceshipController2 : MonoBehaviour
+public class SpaceshipController : MonoBehaviour
 {
     public Rigidbody rb;
     [SerializeField] private Grapple grapplePrefab;
     private Grapple grapple;
+    public AK.Wwise.Event GrappleLaunch;
+
 
     private InputAction moveAction;
     private InputAction grappleAction;
+
+
 
     private Camera cam;
 
@@ -32,6 +36,8 @@ public class SpaceshipController2 : MonoBehaviour
 
         cam = Camera.main!;
         RaceStartHandler.OnCountdownEnd.AddListener(() => isControllable = true);
+
+
     }
 
     private void OnDrawGizmosSelected()
@@ -51,11 +57,14 @@ public class SpaceshipController2 : MonoBehaviour
             }
 
             grapple = Instantiate(grapplePrefab, transform);
-
+            GrappleLaunch.Post(gameObject);
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
             grapple.targetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
         }
+
+      
+
     }
 
     private void FixedUpdate()
@@ -87,4 +96,6 @@ public class SpaceshipController2 : MonoBehaviour
         if (checkpointNum <= reachedCheckpoint) return;
         reachedCheckpoint = checkpointNum;
     }
+
+ 
 }

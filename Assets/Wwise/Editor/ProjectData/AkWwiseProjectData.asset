@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: a1624c1cf4187840b931c015d2f42dee
     GuidInternal: 
-    m_lastTime: -8584387815255766883
+    m_lastTime: -8584388914614775808
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: c64b5b18fe1a6e4c8de76c6cfb01d77b
     GuidInternal: 
-    m_lastTime: -8584387815257832914
+    m_lastTime: -8584388914614775808
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 26d6763f0584894993633b711e6f468c
     GuidInternal: 
-    m_lastTime: -8584387815255766883
+    m_lastTime: -8584387996794775808
     List:
     - name: Maain
       guid: 85dd19db6aaacd40ae1db78bab119f3e
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 157c1001d18dd140809ed91d066b2e6d
     GuidInternal: 
-    m_lastTime: -8584387815258612179
+    m_lastTime: -8584387355634775808
     List:
     - name: BGM
       guid: d64bae3338ca834a9fd5fcd05ce3e7fe
@@ -113,6 +113,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Click
+      guid: 41f2e8ea7f10e54cacc85c3010c87bbd
+      id: 1584507803
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 157c1001d18dd140809ed91d066b2e6d
+      - ElementName: Click
+        ObjectType: 3
+        guid: 41f2e8ea7f10e54cacc85c3010c87bbd
+      Path: Events\Default Work Unit\Click
+      maxAttenuation: 0
+      maxDuration: 1.1323333
+      minDuration: 0.31335416
     - name: CrowdCheering
       guid: 6a1fb7a2a33bc2469a29de0a3681ef0a
       id: 751466621
@@ -128,6 +145,23 @@ MonoBehaviour:
         guid: 6a1fb7a2a33bc2469a29de0a3681ef0a
       Path: Events\Default Work Unit\CrowdCheering
       maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+    - name: Grapple
+      guid: d7397ca244cb2c48a913c078316ad2cf
+      id: 1703472526
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 157c1001d18dd140809ed91d066b2e6d
+      - ElementName: Grapple
+        ObjectType: 3
+        guid: d7397ca244cb2c48a913c078316ad2cf
+      Path: Events\Default Work Unit\Grapple
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Three_Two_One_Go
@@ -147,6 +181,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 13.469313
       minDuration: 13.469313
+    - name: Thrust
+      guid: ad4ba988e16384469f0efca58ef00315
+      id: 2197345151
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 157c1001d18dd140809ed91d066b2e6d
+      - ElementName: Thrust
+        ObjectType: 3
+        guid: ad4ba988e16384469f0efca58ef00315
+      Path: Events\Default Work Unit\Thrust
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -159,8 +210,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 708b2cd52ba1ed44b48aa714426d8013
     GuidInternal: 
-    m_lastTime: -8584387815258612179
-    List: []
+    m_lastTime: -8584388001274775808
+    List:
+    - name: RTPCSpeed
+      guid: 2708d0655b2e564086f952851d2af018
+      id: 2470809313
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 708b2cd52ba1ed44b48aa714426d8013
+      - ElementName: RTPCSpeed
+        ObjectType: 13
+        guid: 2708d0655b2e564086f952851d2af018
+      Path: Game Parameters\Default Work Unit\RTPCSpeed
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -173,7 +238,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a15012394ca3ed4e991a8930a054d53a
     GuidInternal: 
-    m_lastTime: -8584387815255766883
+    m_lastTime: -8584387350254775808
     List:
     - name: BGM
       guid: 5f23d028cc4a0046a983152990d8b0d0
@@ -222,6 +287,86 @@ MonoBehaviour:
         - ElementName: BGM2
           ObjectType: 8
           guid: d12459a02a382e469d96b417b3cac379
+      - name: BGM3
+        guid: 43f2da4ba483bb499a6d67ab1c1f84c8
+        id: 1189781956
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a15012394ca3ed4e991a8930a054d53a
+        - ElementName: BGM
+          ObjectType: 9
+          guid: 5f23d028cc4a0046a983152990d8b0d0
+        - ElementName: BGM3
+          ObjectType: 8
+          guid: 43f2da4ba483bb499a6d67ab1c1f84c8
+      - name: BGM3_02
+        guid: 53cc62f629ea5943b896842bde62c0c7
+        id: 513886825
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a15012394ca3ed4e991a8930a054d53a
+        - ElementName: BGM
+          ObjectType: 9
+          guid: 5f23d028cc4a0046a983152990d8b0d0
+        - ElementName: BGM3_02
+          ObjectType: 8
+          guid: 53cc62f629ea5943b896842bde62c0c7
+      - name: BGM4
+        guid: 094f93b233152a4084ae480280f8214d
+        id: 1189781955
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a15012394ca3ed4e991a8930a054d53a
+        - ElementName: BGM
+          ObjectType: 9
+          guid: 5f23d028cc4a0046a983152990d8b0d0
+        - ElementName: BGM4
+          ObjectType: 8
+          guid: 094f93b233152a4084ae480280f8214d
+      - name: BGM4_01
+        guid: c47a639a9f74ff4cb2c04ca155f9585e
+        id: 574432887
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a15012394ca3ed4e991a8930a054d53a
+        - ElementName: BGM
+          ObjectType: 9
+          guid: 5f23d028cc4a0046a983152990d8b0d0
+        - ElementName: BGM4_01
+          ObjectType: 8
+          guid: c47a639a9f74ff4cb2c04ca155f9585e
+      - name: BGM5_End
+        guid: c0401bce68f6d54bb3f6db8b9431d77a
+        id: 2659455768
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a15012394ca3ed4e991a8930a054d53a
+        - ElementName: BGM
+          ObjectType: 9
+          guid: 5f23d028cc4a0046a983152990d8b0d0
+        - ElementName: BGM5_End
+          ObjectType: 8
+          guid: c0401bce68f6d54bb3f6db8b9431d77a
       - name: None
         guid: ca9d6280b3399441b9ebb8ab13bb3cc4
         id: 748895195
@@ -253,7 +398,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 97dc1f28290b764f9f273fd67d62c121
     GuidInternal: 
-    m_lastTime: -8584387815255766883
+    m_lastTime: -8584388914614775808
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -267,10 +412,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 4f7cabc7899e5d48900f041bef50e6b2
     GuidInternal: 
-    m_lastTime: -8584387815255766883
+    m_lastTime: -8584388914614775808
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000000700000008000000090000000a0000000b0000005a770400
+  ExpandedWaapiItemIds: 05000000060000000700000008000000090000000a0000000b0000000c0000000d0000000f00000010000000190000001a0000001b0000005a770400
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
