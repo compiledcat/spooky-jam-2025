@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: a1624c1cf4187840b931c015d2f42dee
     GuidInternal: 
-    m_lastTime: -8584388250435584970
+    m_lastTime: -8584387815255766883
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: c64b5b18fe1a6e4c8de76c6cfb01d77b
     GuidInternal: 
-    m_lastTime: -8584388250437429481
+    m_lastTime: -8584387815257832914
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 26d6763f0584894993633b711e6f468c
     GuidInternal: 
-    m_lastTime: -8584388250435624960
+    m_lastTime: -8584387815255766883
     List:
     - name: Maain
       guid: 85dd19db6aaacd40ae1db78bab119f3e
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 157c1001d18dd140809ed91d066b2e6d
     GuidInternal: 
-    m_lastTime: -8584388250438126194
+    m_lastTime: -8584387815258612179
     List:
     - name: BGM
       guid: d64bae3338ca834a9fd5fcd05ce3e7fe
@@ -111,8 +111,8 @@ MonoBehaviour:
         guid: d64bae3338ca834a9fd5fcd05ce3e7fe
       Path: Events\Default Work Unit\BGM
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: CrowdCheering
       guid: 6a1fb7a2a33bc2469a29de0a3681ef0a
       id: 751466621
@@ -127,9 +127,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: 6a1fb7a2a33bc2469a29de0a3681ef0a
       Path: Events\Default Work Unit\CrowdCheering
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
     - name: Three_Two_One_Go
       guid: 02c7d05f10302d4290f50802c58f3b0a
       id: 625825150
@@ -145,8 +145,8 @@ MonoBehaviour:
         guid: 02c7d05f10302d4290f50802c58f3b0a
       Path: Events\Default Work Unit\Three_Two_One_Go
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 13.469313
+      minDuration: 13.469313
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -159,7 +159,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 708b2cd52ba1ed44b48aa714426d8013
     GuidInternal: 
-    m_lastTime: -8584388250438121174
+    m_lastTime: -8584387815258612179
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -173,7 +173,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a15012394ca3ed4e991a8930a054d53a
     GuidInternal: 
-    m_lastTime: -8584388250435604961
+    m_lastTime: -8584387815255766883
     List:
     - name: BGM
       guid: 5f23d028cc4a0046a983152990d8b0d0
@@ -253,7 +253,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 97dc1f28290b764f9f273fd67d62c121
     GuidInternal: 
-    m_lastTime: -8584388250435604961
+    m_lastTime: -8584387815255766883
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -267,7 +267,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 4f7cabc7899e5d48900f041bef50e6b2
     GuidInternal: 
-    m_lastTime: -8584388250435594960
+    m_lastTime: -8584387815255766883
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 05000000060000000700000008000000090000000a0000000b0000005a770400
