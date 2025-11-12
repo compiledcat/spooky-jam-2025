@@ -7,7 +7,6 @@ public class Grapple : MonoBehaviour
     [HideInInspector] public Asteroid Target;
 
     [SerializeField] private float _sidewaysLength = 0.75f;
-    [SerializeField] private float _maxRange = 80;
     [SerializeField] private float _extendSpeed = 120;
     [SerializeField] private LayerMask _asteroidLayer;
     [SerializeField] private LineRenderer _lineRenderer;
@@ -61,19 +60,12 @@ public class Grapple : MonoBehaviour
                 _joint.xMotion = ConfigurableJointMotion.Limited;
                 _joint.yMotion = ConfigurableJointMotion.Limited;
                 _joint.zMotion = ConfigurableJointMotion.Locked;
-
-                _joint.enableCollision = true;
-
+                
                 _joint.linearLimit = new SoftJointLimit
                 {
                     limit = _currentLength,
-                    bounciness = 0.1f
+                    bounciness = 0.2f
                 };
-            }
-            else if (_currentLength >= _maxRange)
-            {
-                // missed
-                Destroy(gameObject);
             }
         }
 

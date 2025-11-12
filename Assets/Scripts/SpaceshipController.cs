@@ -59,16 +59,17 @@ public class SpaceshipController : MonoBehaviour
                 if (_hoveredAsteroid)
                 {
                     _hoveredAsteroid.Outline.enabled = false;
+                    _hoveredAsteroid = null;
                 }
 
-                _hoveredAsteroid = asteroid;
-                if (asteroid)
+                if (asteroid && asteroid.AllowGrapple)
                 {
+                    _hoveredAsteroid = asteroid;
                     _hoveredAsteroid.Outline.enabled = true;
                 }
             }
 
-            if (grappleAction.WasPressedThisFrame())
+            if (grappleAction.WasPressedThisFrame() && asteroid.AllowGrapple)
             {
                 grapple = Instantiate(grapplePrefab, transform);
                 grapple.Target = hit.transform.GetComponentInParent<Asteroid>();
@@ -79,7 +80,7 @@ public class SpaceshipController : MonoBehaviour
             _hoveredAsteroid.Outline.enabled = false;
             _hoveredAsteroid = null;
         }
-        
+
         if (grappleAction.WasReleasedThisFrame() && grapple)
         {
             Destroy(grapple.gameObject);
