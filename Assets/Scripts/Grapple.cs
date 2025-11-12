@@ -44,7 +44,13 @@ public class Grapple : MonoBehaviour
                 _joint.connectedBody = _hitAsteroid.GetComponentInParent<Rigidbody>();
                 _joint.autoConfigureConnectedAnchor = false;
                 _joint.anchor = _beamStartPosLocal;
-                _joint.connectedAnchor = _hitAsteroid.transform.InverseTransformPoint(hit.point);
+                _joint.connectedAnchor = Vector3.zero;
+                
+                // Modify our target to be the center of the asteroid
+                var extraDistance = Vector3.Distance(_hitAsteroid.transform.position, hit.point);
+                _currentLength += extraDistance;
+                
+                TargetPosition = _hitAsteroid.transform.position;
 
                 _joint.xMotion = ConfigurableJointMotion.Limited;
                 _joint.yMotion = ConfigurableJointMotion.Limited;

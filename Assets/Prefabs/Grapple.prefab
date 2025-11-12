@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetPosition: {x: 0, y: 0, z: 0}
-  _maxRange: 30
-  _extendSpeed: 110
+  _maxRange: 80
+  _extendSpeed: 120
   _asteroidLayer:
     serializedVersion: 2
     m_Bits: 256
