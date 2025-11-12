@@ -5,6 +5,9 @@ using UnityEngine.Splines;
 [ExecuteAlways]
 public class Track : MonoBehaviour
 {
+    [Tooltip("How far along the track the first checkpoint starts")] [Range(0f, 1f)] [SerializeField]
+    private float _checkpointPositionOffset = 0f;
+
     [field: SerializeField]
     [field: Range(0f, 1f)]
     public float[] CheckpointPositions { get; private set; } = Array.Empty<float>();
@@ -13,6 +16,7 @@ public class Track : MonoBehaviour
 
     [SerializeField] private Transform _checkpointsParent;
     [SerializeField] private Checkpoint _checkpointPrefab;
+
 
     private bool _isDirty;
 
@@ -83,7 +87,8 @@ public class Track : MonoBehaviour
         // modify all to correct position/rotation
         for (var i = 0; i < CheckpointPositions.Length; i++)
         {
-            var t = CheckpointPositions[i];
+            var t = CheckpointPositions[i] + _checkpointPositionOffset;
+            t -= Mathf.Floor(t); // wrap around 0-1
             var position = transform.TransformPoint(_splineContainer.Spline.EvaluatePosition(t));
             var rotation = Quaternion.LookRotation(_splineContainer.Spline.EvaluateTangent(t), -Vector3.forward);
 
