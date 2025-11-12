@@ -1,5 +1,7 @@
+using System;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 public class ChildSquimbler : MonoBehaviour
@@ -10,8 +12,40 @@ public class ChildSquimbler : MonoBehaviour
     [SerializeField] private float _magnitude = 0.05f;
     [SerializeField] private float _speed = 5.0f;
 
+    [Range(0f, 1f)] [SerializeField] private float _randomDeleteChance;
+    [SerializeField] private Vector3 _randomOffsetRange = Vector3.zero;
+
     private void Start()
     {
+        // Randomly delete
+        if (_randomDeleteChance > 0)
+        {
+            for (var i = transform.childCount - 1; i >= 0; i--)
+            {
+                if (Random.value < _randomDeleteChance)
+                {
+                    Destroy(transform.GetChild(i).gameObject);
+                }
+            }
+        }
+
+        // Randomly offset
+        if (_randomOffsetRange != Vector3.zero)
+        {
+            for (var i = 0; i < transform.childCount; i++)
+            {
+                var child = transform.GetChild(i);
+                var randomOffset = new Vector3(
+                    Random.Range(-_randomOffsetRange.x, _randomOffsetRange.x),
+                    Random.Range(-_randomOffsetRange.y, _randomOffsetRange.y),
+                    Random.Range(-_randomOffsetRange.z, _randomOffsetRange.z)
+                );
+
+                child.localPosition += randomOffset;
+            }
+        }
+
+        // Randomise positions
         if (_randomiseChildPositions)
         {
             var localPositions = new Vector3[transform.childCount];
