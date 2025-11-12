@@ -10,7 +10,7 @@ public class SpaceshipController : MonoBehaviour
     [Space] [SerializeField] private Transform _yolk;
     [SerializeField] private Transform _greebleHead;
     [SerializeField] private float _maxTurnAnimateAngle = 30.0f;
-    
+
     private InputAction moveAction;
     private InputAction grappleAction;
 
@@ -58,21 +58,29 @@ public class SpaceshipController : MonoBehaviour
 
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
-            grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            var ray = cam.ScreenPointToRay(mouseScreenPos);
+            if (Physics.Raycast(ray, out var hit, 100f, LayerMask.GetMask("Asteroid")))
+            {
+                grapple.TargetPosition = hit.transform.position;
+            }
+            else
+            {
+                grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            }
         }
 
         if (grappleAction.WasReleasedThisFrame() && grapple)
         {
             Destroy(grapple.gameObject);
         }
-        
+
         // Rotate yolk and greeble head to follow turn x
         var moveState = moveAction.ReadValue<Vector2>();
         var targetYolkRotationZ = -moveState.x * _maxTurnAnimateAngle;
         var yolkEuler = _yolk.localEulerAngles;
         yolkEuler.z = Mathf.LerpAngle(yolkEuler.z, targetYolkRotationZ, 10.0f * Time.deltaTime);
         _yolk.localEulerAngles = yolkEuler;
-        
+
         var targetGreebleRotationY = moveState.x * _maxTurnAnimateAngle;
         var greebleEuler = _greebleHead.localEulerAngles;
         greebleEuler.y = Mathf.LerpAngle(greebleEuler.y, targetGreebleRotationY, 10.0f * Time.deltaTime);

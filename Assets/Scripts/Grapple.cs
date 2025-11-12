@@ -1,9 +1,11 @@
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class Grapple : MonoBehaviour
 {
     [HideInInspector] public Vector3 TargetPosition;
 
+    [SerializeField] private float _sidewaysLength = 0.75f;
     [SerializeField] private float _maxRange = 30;
     [SerializeField] private float _extendSpeed = 110;
     [SerializeField] private LayerMask _asteroidLayer;
@@ -22,7 +24,7 @@ public class Grapple : MonoBehaviour
 
         var direction = (TargetPosition - transform.position).normalized;
         var isRightSide = Vector3.Dot(direction, transform.right) > 0;
-        _beamStartPosLocal = (isRightSide ? Vector3.right : -Vector3.right) * 0.5f;
+        _beamStartPosLocal = (isRightSide ? Vector3.right : -Vector3.right) * _sidewaysLength;
     }
 
     private void Update()
@@ -40,17 +42,17 @@ public class Grapple : MonoBehaviour
                 _isAttached = true;
                 _hitAsteroid = hit.collider.gameObject;
 
+                // Modify our target to be the center of the asteroid
+                TargetPosition = _hitAsteroid.transform.position;
+
+                var extraDistance = Vector3.Distance(_hitAsteroid.transform.position, hit.point);
+                _currentLength += extraDistance;
+                
                 _joint = _ship.rb.gameObject.AddComponent<ConfigurableJoint>();
                 _joint.connectedBody = _hitAsteroid.GetComponentInParent<Rigidbody>();
                 _joint.autoConfigureConnectedAnchor = false;
                 _joint.anchor = _beamStartPosLocal;
                 _joint.connectedAnchor = Vector3.zero;
-                
-                // Modify our target to be the center of the asteroid
-                var extraDistance = Vector3.Distance(_hitAsteroid.transform.position, hit.point);
-                _currentLength += extraDistance;
-                
-                TargetPosition = _hitAsteroid.transform.position;
 
                 _joint.xMotion = ConfigurableJointMotion.Limited;
                 _joint.yMotion = ConfigurableJointMotion.Limited;
@@ -89,8 +91,13 @@ public class Grapple : MonoBehaviour
             endPos = startPos + direction * _currentLength;
         }
 
-        _lineRenderer.SetPosition(0, startPos);
-        _lineRenderer.SetPosition(1, endPos);
+        // _lineRenderer.SetPosition(0, startPos);
+        // _lineRenderer.SetPosition(1, endPos);
+        
+        var distance = Vector3.Distance(startPos, endPos);
+        transform.localScale = new Vector3(1, 1, distance);
+        
+        transform.forward = (endPos - startPos).normalized;
     }
 
     private void OnDestroy()
