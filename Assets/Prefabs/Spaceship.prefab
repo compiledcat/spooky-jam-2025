@@ -78,10 +78,10 @@ MonoBehaviour:
   _yolk: {fileID: 8920116239413791622}
   _greebleHead: {fileID: 4365707721706082657}
   _maxTurnAnimateAngle: 28
-  linearThrust: 60
-  angularThrust: 20
+  linearThrust: 65
+  angularThrust: 22
   lateralDamping: 0.4
-  maxLinearVelocity: 80
+  maxLinearVelocity: 110
   enginePosition: {x: 0, y: -1, z: 0}
 --- !u!1001 &7429767313404907485
 PrefabInstance:
