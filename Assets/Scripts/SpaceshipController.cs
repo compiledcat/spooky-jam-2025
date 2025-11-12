@@ -54,18 +54,18 @@ public class SpaceshipController : MonoBehaviour
                 Destroy(grapple.gameObject);
             }
 
-            grapple = Instantiate(grapplePrefab, transform);
 
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
             var ray = cam.ScreenPointToRay(mouseScreenPos);
             if (Physics.Raycast(ray, out var hit, 100f, LayerMask.GetMask("Asteroid")))
             {
-                grapple.TargetPosition = hit.transform.position;
+                grapple = Instantiate(grapplePrefab, transform);
+                grapple.Target = hit.transform.GetComponentInParent<Asteroid>();
             }
             else
             {
-                grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+                // grapple.Target = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
             }
         }
 
