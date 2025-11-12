@@ -8,7 +8,8 @@ public class SpaceshipController : MonoBehaviour
     private Grapple grapple;
 
     [Space] [SerializeField] private Transform _yolk;
-    [SerializeField] private float _yolkMaxAngle = 30.0f;
+    [SerializeField] private Transform _greebleHead;
+    [SerializeField] private float _maxTurnAnimateAngle = 30.0f;
     
     private InputAction moveAction;
     private InputAction grappleAction;
@@ -65,12 +66,17 @@ public class SpaceshipController : MonoBehaviour
             Destroy(grapple.gameObject);
         }
         
-        // Rotate yolk to follow turn x
+        // Rotate yolk and greeble head to follow turn x
         var moveState = moveAction.ReadValue<Vector2>();
-        var targetYolkRotationZ = -moveState.x * _yolkMaxAngle;
+        var targetYolkRotationZ = -moveState.x * _maxTurnAnimateAngle;
         var yolkEuler = _yolk.localEulerAngles;
         yolkEuler.z = Mathf.LerpAngle(yolkEuler.z, targetYolkRotationZ, 10.0f * Time.deltaTime);
         _yolk.localEulerAngles = yolkEuler;
+        
+        var targetGreebleRotationY = moveState.x * _maxTurnAnimateAngle;
+        var greebleEuler = _greebleHead.localEulerAngles;
+        greebleEuler.y = Mathf.LerpAngle(greebleEuler.y, targetGreebleRotationY, 10.0f * Time.deltaTime);
+        _greebleHead.localEulerAngles = greebleEuler;
     }
 
     private void FixedUpdate()

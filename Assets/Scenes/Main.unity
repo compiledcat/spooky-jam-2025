@@ -9020,6 +9020,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1699787859861458002, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e12db503f2313d445b9ff85a1a5a9a0a, type: 2}
     - target: {fileID: 5211741895728252203, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
       propertyPath: m_Name
       value: PlayerShip
@@ -9064,6 +9068,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 5725890985537662495, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: febd35fa5f1607744a2b5c190761cf7a, type: 2}
     - target: {fileID: 6708731855958313304, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -9076,6 +9084,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8248229061252662063, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e12db503f2313d445b9ff85a1a5a9a0a, type: 2}
     - target: {fileID: 8491988605631196477, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
       propertyPath: m_Layer
       value: 6

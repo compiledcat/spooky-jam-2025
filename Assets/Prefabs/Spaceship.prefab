@@ -76,7 +76,8 @@ MonoBehaviour:
   rb: {fileID: 9049315891832058689}
   grapplePrefab: {fileID: 2249524925264321281, guid: 235576b366ba417158e20d452a3c4f5a, type: 3}
   _yolk: {fileID: 8920116239413791622}
-  _yolkMaxAngle: 30
+  _greebleHead: {fileID: 4365707721706082657}
+  _maxTurnAnimateAngle: 28
   linearThrust: 45
   angularThrust: 12
   lateralDamping: 1
@@ -237,6 +238,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}
+--- !u!4 &4365707721706082657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5322745343497468982, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}
+  m_PrefabInstance: {fileID: 8451053880493436247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6220004041532789730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2529272576819150517, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}
