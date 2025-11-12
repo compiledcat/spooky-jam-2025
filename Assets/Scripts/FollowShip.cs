@@ -22,6 +22,10 @@ public class FollowShip : MonoBehaviour
     [ContextMenu("Move to player")]
     private void SetToPlayer()
     {
+#if UNITY_EDITOR
+        UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Move Camera to Player");
+#endif
+
         transform.position = new Vector3(ship.transform.position.x, ship.transform.position.y, transform.position.z);
         transform.rotation = ship.transform.rotation;
     }
