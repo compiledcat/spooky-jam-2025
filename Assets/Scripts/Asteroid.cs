@@ -3,10 +3,13 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     private Rigidbody _rb;
+    public Outline Outline;
+    public bool AllowGrapple = true;
 
     private void OnValidate()
     {
         _rb ??= GetComponent<Rigidbody>();
+        Outline ??= GetComponent<Outline>();
     }
 
     private void Start()

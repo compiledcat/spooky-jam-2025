@@ -8,8 +8,11 @@ public class SpaceshipController : MonoBehaviour
     private Grapple grapple;
 
     [Space] [SerializeField] private Transform _yolk;
-    [SerializeField] private float _yolkMaxAngle = 30.0f;
-    
+    [SerializeField] private Transform _greebleHead;
+    [SerializeField] private float _maxTurnAnimateAngle = 30.0f;
+
+    private Asteroid _hoveredAsteroid;
+
     private InputAction moveAction;
     private InputAction grappleAction;
 
@@ -46,31 +49,54 @@ public class SpaceshipController : MonoBehaviour
     private void Update()
     {
         //Grapple
-        if (grappleAction.WasPressedThisFrame() && isControllable)
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+        var ray = cam.ScreenPointToRay(mouseScreenPos);
+        if (isControllable && Physics.Raycast(ray, out var hit, 100f, LayerMask.GetMask("Asteroid")))
         {
-            if (grapple)
+            var asteroid = hit.transform.GetComponentInParent<Asteroid>();
+            if (_hoveredAsteroid != asteroid)
             {
-                Destroy(grapple.gameObject);
+                if (_hoveredAsteroid)
+                {
+                    _hoveredAsteroid.Outline.enabled = false;
+                    _hoveredAsteroid = null;
+                }
+
+                if (asteroid && asteroid.AllowGrapple)
+                {
+                    _hoveredAsteroid = asteroid;
+                    _hoveredAsteroid.Outline.enabled = true;
+                }
             }
 
-            grapple = Instantiate(grapplePrefab, transform);
-
-            Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
-            grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            if (grappleAction.WasPressedThisFrame() && asteroid.AllowGrapple)
+            {
+                grapple = Instantiate(grapplePrefab, transform);
+                grapple.Target = hit.transform.GetComponentInParent<Asteroid>();
+            }
+        }
+        else if (_hoveredAsteroid)
+        {
+            _hoveredAsteroid.Outline.enabled = false;
+            _hoveredAsteroid = null;
         }
 
         if (grappleAction.WasReleasedThisFrame() && grapple)
         {
             Destroy(grapple.gameObject);
         }
-        
-        // Rotate yolk to follow turn x
+
+        // Rotate yolk and greeble head to follow turn x
         var moveState = moveAction.ReadValue<Vector2>();
-        var targetYolkRotationZ = -moveState.x * _yolkMaxAngle;
+        var targetYolkRotationZ = -moveState.x * _maxTurnAnimateAngle;
         var yolkEuler = _yolk.localEulerAngles;
         yolkEuler.z = Mathf.LerpAngle(yolkEuler.z, targetYolkRotationZ, 10.0f * Time.deltaTime);
         _yolk.localEulerAngles = yolkEuler;
+
+        var targetGreebleRotationY = moveState.x * _maxTurnAnimateAngle;
+        var greebleEuler = _greebleHead.localEulerAngles;
+        greebleEuler.y = Mathf.LerpAngle(greebleEuler.y, targetGreebleRotationY, 10.0f * Time.deltaTime);
+        _greebleHead.localEulerAngles = greebleEuler;
     }
 
     private void FixedUpdate()

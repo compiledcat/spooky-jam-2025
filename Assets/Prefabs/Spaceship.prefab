@@ -26,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5211741895728252203}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.68933505, w: 0.72444266}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2639012890458657123}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &9049315891832058689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,11 +76,12 @@ MonoBehaviour:
   rb: {fileID: 9049315891832058689}
   grapplePrefab: {fileID: 2249524925264321281, guid: 235576b366ba417158e20d452a3c4f5a, type: 3}
   _yolk: {fileID: 8920116239413791622}
-  _yolkMaxAngle: 30
-  linearThrust: 45
-  angularThrust: 12
-  lateralDamping: 1
-  maxLinearVelocity: 45
+  _greebleHead: {fileID: 4365707721706082657}
+  _maxTurnAnimateAngle: 28
+  linearThrust: 65
+  angularThrust: 22
+  lateralDamping: 0.6
+  maxLinearVelocity: 110
   enginePosition: {x: 0, y: -1, z: 0}
 --- !u!1001 &7429767313404907485
 PrefabInstance:
@@ -237,6 +238,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}
+--- !u!4 &4365707721706082657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5322745343497468982, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}
+  m_PrefabInstance: {fileID: 8451053880493436247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6220004041532789730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2529272576819150517, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}

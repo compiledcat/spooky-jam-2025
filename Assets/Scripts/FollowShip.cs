@@ -27,7 +27,7 @@ public class FollowShip : MonoBehaviour
 #endif
 
         transform.position = new Vector3(ship.transform.position.x, ship.transform.position.y, transform.position.z);
-        transform.rotation = ship.transform.rotation;
+        transform.rotation = Quaternion.LookRotation(-ship.transform.up, ship.transform.forward);
     }
 
     private void LateUpdate()
