@@ -22,6 +22,10 @@ public class FollowShip : MonoBehaviour
     [ContextMenu("Move to player")]
     private void SetToPlayer()
     {
+#if UNITY_EDITOR
+        UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Move Camera to Player");
+#endif
+
         transform.position = new Vector3(ship.transform.position.x, ship.transform.position.y, transform.position.z);
         transform.rotation = ship.transform.rotation;
     }
@@ -42,6 +46,9 @@ public class FollowShip : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, camDefaultOrthoSize + camFOVIncrease * camDefaultOrthoSize, camLinearLerpSpeed * Time.deltaTime);
 
         //Also apply some slerpin' to the rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, ship.transform.rotation, camAngularLerpSpeed * Time.deltaTime);
+        //Look in the ship's down direction with our top in the ship's forward direction 
+        var lookVector = -ship.transform.up;
+        var targetRotation = Quaternion.LookRotation(lookVector, ship.transform.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, camAngularLerpSpeed * Time.deltaTime);
     }
 }

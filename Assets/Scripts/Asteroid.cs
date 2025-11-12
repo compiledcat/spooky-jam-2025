@@ -13,6 +13,6 @@ public class Asteroid : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         // random angular velocity
-        _rb.angularVelocity = UnityEngine.Random.onUnitSphere * UnityEngine.Random.Range(0.1f, 1.0f);
+        _rb.angularVelocity = Random.onUnitSphere * Random.Range(0.1f, 1.0f);
     }
 }

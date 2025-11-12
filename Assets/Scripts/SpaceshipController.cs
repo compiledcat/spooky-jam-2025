@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpaceshipController2 : MonoBehaviour
+public class SpaceshipController : MonoBehaviour
 {
     public Rigidbody rb;
     [SerializeField] private Grapple grapplePrefab;
     private Grapple grapple;
 
+    [Space] [SerializeField] private Transform _yolk;
+    [SerializeField] private float _yolkMaxAngle = 30.0f;
+    
     private InputAction moveAction;
     private InputAction grappleAction;
 
@@ -23,7 +26,7 @@ public class SpaceshipController2 : MonoBehaviour
     [SerializeField] private float lateralDamping = 1.0f;
     public float maxLinearVelocity = 35.0f;
 
-    [SerializeField] private Vector3 enginePosition;
+    public Vector3 enginePosition;
 
     private void Start()
     {
@@ -54,8 +57,20 @@ public class SpaceshipController2 : MonoBehaviour
 
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
-            grapple.targetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
         }
+
+        if (grappleAction.WasReleasedThisFrame() && grapple)
+        {
+            Destroy(grapple.gameObject);
+        }
+        
+        // Rotate yolk to follow turn x
+        var moveState = moveAction.ReadValue<Vector2>();
+        var targetYolkRotationZ = -moveState.x * _yolkMaxAngle;
+        var yolkEuler = _yolk.localEulerAngles;
+        yolkEuler.z = Mathf.LerpAngle(yolkEuler.z, targetYolkRotationZ, 10.0f * Time.deltaTime);
+        _yolk.localEulerAngles = yolkEuler;
     }
 
     private void FixedUpdate()
@@ -64,7 +79,7 @@ public class SpaceshipController2 : MonoBehaviour
         Vector2 moveState = isControllable ? moveAction.ReadValue<Vector2>() : Vector2.zero;
 
         Vector3 engineWorldPos = transform.TransformPoint(enginePosition);
-        rb.AddForceAtPosition(transform.up * (linearThrust * Mathf.Max(0, moveState.y)), engineWorldPos);
+        rb.AddForceAtPosition(transform.forward * (linearThrust * Mathf.Max(0, moveState.y)), engineWorldPos);
 
         if (rb.linearVelocity.sqrMagnitude >= maxLinearVelocity * maxLinearVelocity)
         {
@@ -73,7 +88,7 @@ public class SpaceshipController2 : MonoBehaviour
             rb.linearVelocity = dir * maxLinearVelocity;
         }
 
-        rb.AddTorque(transform.forward * (angularThrust * -moveState.x));
+        rb.AddTorque(transform.up * (angularThrust * moveState.x));
 
         if (moveState.y > 0)
         {

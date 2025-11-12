@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8823d8cfbbfb4205a2ee87e4554376bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 8084905489229651585}
+  ship: {fileID: 0}
   camLinearLerpSpeed: 10
   camAngularLerpSpeed: 2
   maxCamLookaheadAmount: 0.8
@@ -4464,8 +4464,23 @@ MonoBehaviour:
   wallSpeedFloor: 6
   grapplePrefab: {fileID: 2249524925264321281, guid: 235576b366ba417158e20d452a3c4f5a, type: 3}
   isControllable: 1
-  rb: {fileID: 0}
-  cam: {fileID: 0}
+  tether: {fileID: 0}
+  tautEpsilon: 0.01
+  followOrbit: 1
+  orbitNearTautMargin: 0.12
+  orbitAlignKp: 6
+  orbitAlignKd: 0.6
+  orbitRadialKill: 1
+  orbitMinTangentialSpeed: 3.5
+  orbitThrustScale: 1
+  gravityScale: 0.25
+  rb: {fileID: 8084905489229651586}
+  cam: {fileID: 330585545}
+--- !u!54 &8084905489229651586 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 9049315891832058689, guid: 2fe7a8d8a8c3fd54bb7cd461a75c7c4f, type: 3}
+  m_PrefabInstance: {fileID: 8084905489229651583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8419036416819159203
 PrefabInstance:
   m_ObjectHideFlags: 0
