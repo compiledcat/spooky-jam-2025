@@ -2439,6 +2439,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6341926370309812108, guid: fc87a50c44f258d4792162d442da4ca1, type: 3}
   m_PrefabInstance: {fileID: 547414756}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &565310613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4764999525889504355, guid: 89cd479b7a8c3594b8eb585c335f27f1, type: 3}
+  m_PrefabInstance: {fileID: 852766893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &568473523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2724,6 +2729,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6341926370309812108, guid: fc87a50c44f258d4792162d442da4ca1, type: 3}
   m_PrefabInstance: {fileID: 591042557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &614821383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8075809661749817695, guid: 89cd479b7a8c3594b8eb585c335f27f1, type: 3}
+  m_PrefabInstance: {fileID: 852766893}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &636700869
 PrefabInstance:
@@ -3762,11 +3772,12 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 83bf8dbc8a4f5144983bf01612fd7e90, type: 2}
   _lapTimer: {fileID: 1960479188}
   _leaderboard: {fileID: 1944144329}
-  _title: {fileID: 0}
-  _pressStart: {fileID: 0}
-  _one: {fileID: 0}
-  _two: {fileID: 0}
-  _three: {fileID: 0}
+  _title: {fileID: 583296029}
+  _pressStart: {fileID: 1604991940}
+  _one: {fileID: 614821383}
+  _two: {fileID: 565310613}
+  _three: {fileID: 1930004950}
+  _debugSpeedUp: 0
 --- !u!1 &975824251
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,6 +7688,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6341926370309812108, guid: fc87a50c44f258d4792162d442da4ca1, type: 3}
   m_PrefabInstance: {fileID: 1921526305}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1930004950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7615311104380189752, guid: 89cd479b7a8c3594b8eb585c335f27f1, type: 3}
+  m_PrefabInstance: {fileID: 852766893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1937306878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8079,7 +8095,7 @@ MonoBehaviour:
 
     <size=50%>Checkpoint {checkpoint}/{checkpointCount}</size>'
   _text: {fileID: 1960479189}
-  _track: {fileID: 0}
+  _track: {fileID: 350771020}
   _ship: {fileID: 706338406}
 --- !u!1001 &1965491482
 PrefabInstance:

@@ -154,7 +154,7 @@ public class SpaceshipController2 : MonoBehaviour
                 Plane plane = new Plane(Vector3.forward, new Vector3(0f, 0f, transform.position.z));
                 if (plane.Raycast(ray, out float enter)) target = ray.GetPoint(enter);
             }
-            _grapple.targetPosition = new Vector3(target.x, target.y, transform.position.z);
+            _grapple.TargetPosition = new Vector3(target.x, target.y, transform.position.z);
         }
     }
 

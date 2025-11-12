@@ -24,6 +24,16 @@ public class RaceStartHandler : MonoBehaviour
     private float _lapTimerStartingY;
     private float _leaderboardStartingX;
 
+    [SerializeField] private bool _debugSpeedUp;
+
+    private void Awake()
+    {
+#if !UNITY_EDITOR
+        // disable debug speedup outside editor
+        _debugSpeedUp = false;
+#endif
+    }
+
     private void Start()
     {
         _lapTimerStartingY = _lapTimer.anchoredPosition.y;
@@ -43,7 +53,7 @@ public class RaceStartHandler : MonoBehaviour
     {
         var anyKeyPressed = Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame;
 
-        if (anyKeyPressed)
+        if (_debugSpeedUp || anyKeyPressed)
         {
             OnCountdownBegin.Invoke();
             OnCountdownBegin.RemoveListener(AnimateCountdown);
@@ -56,6 +66,8 @@ public class RaceStartHandler : MonoBehaviour
         TTOGo.Post(gameObject);
         BGM.Post(gameObject);
         CrowdCheer.Post(gameObject);
+
+        if (_debugSpeedUp) Time.timeScale = 4;
 
         Tween.Scale(_pressStart, 0.0f, 0.5f, Ease.InOutCubic);
 
@@ -75,6 +87,10 @@ public class RaceStartHandler : MonoBehaviour
             .Group(Tween.Scale(_title, 0.0f, 0.25f, Ease.InOutCubic))
             .Group(Tween.UIAnchoredPositionY(_lapTimer, _lapTimerStartingY, 0.25f, Ease.InOutCubic))
             .Group(Tween.UIAnchoredPositionX(_leaderboard, _leaderboardStartingX, 0.25f, Ease.InOutCubic))
-            .OnComplete(() => OnCountdownEnd.Invoke());
+            .OnComplete(() =>
+            {
+                if (_debugSpeedUp) Time.timeScale = 1;
+                OnCountdownEnd.Invoke();
+            });
     }
 }

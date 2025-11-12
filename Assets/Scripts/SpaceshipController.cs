@@ -23,7 +23,7 @@ public class SpaceshipController : MonoBehaviour
     [SerializeField] private float lateralDamping = 1.0f;
     public float maxLinearVelocity = 35.0f;
 
-    [SerializeField] private Vector3 enginePosition;
+    public Vector3 enginePosition;
 
     private void Start()
     {
@@ -54,7 +54,12 @@ public class SpaceshipController : MonoBehaviour
 
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
-            grapple.targetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+            grapple.TargetPosition = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
+        }
+
+        if (grappleAction.WasReleasedThisFrame() && grapple)
+        {
+            Destroy(grapple.gameObject);
         }
     }
 
