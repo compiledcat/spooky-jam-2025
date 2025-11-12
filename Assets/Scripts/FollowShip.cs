@@ -46,6 +46,9 @@ public class FollowShip : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, camDefaultOrthoSize + camFOVIncrease * camDefaultOrthoSize, camLinearLerpSpeed * Time.deltaTime);
 
         //Also apply some slerpin' to the rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, ship.transform.rotation, camAngularLerpSpeed * Time.deltaTime);
+        //Look in the ship's down direction with our top in the ship's forward direction 
+        var lookVector = -ship.transform.up;
+        var targetRotation = Quaternion.LookRotation(lookVector, ship.transform.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, camAngularLerpSpeed * Time.deltaTime);
     }
 }
