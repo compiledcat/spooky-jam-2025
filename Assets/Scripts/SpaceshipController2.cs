@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// ReSharper disable All im sorry bro this is throwing so many errors for me
+#pragma warning disable CS0414
+
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 [DisallowMultipleComponent]
