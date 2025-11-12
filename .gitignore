@@ -99,3 +99,12 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 .idea/
+
+# Wwise
+.cache/
+*.prof
+*_WwiseProject.*.validationcache
+*_WwiseProject.*.wsettings
+*.akd
+
+/[Aa]ssets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset

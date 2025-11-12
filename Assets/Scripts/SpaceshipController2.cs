@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody))]
-public class SpaceshipController : MonoBehaviour
+public class SpaceshipController2 : MonoBehaviour
 {
     [Header("Core Tuning")]
     public float maxLinearVelocity = 18f;

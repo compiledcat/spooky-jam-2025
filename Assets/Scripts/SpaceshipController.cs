@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SpaceshipController2 : MonoBehaviour
+public class SpaceshipController : MonoBehaviour
 {
     public Rigidbody rb;
     [SerializeField] private Grapple grapplePrefab;
