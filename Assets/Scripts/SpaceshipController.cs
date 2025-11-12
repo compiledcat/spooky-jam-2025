@@ -11,6 +11,8 @@ public class SpaceshipController : MonoBehaviour
     [SerializeField] private Transform _greebleHead;
     [SerializeField] private float _maxTurnAnimateAngle = 30.0f;
 
+    private Asteroid _hoveredAsteroid;
+
     private InputAction moveAction;
     private InputAction grappleAction;
 
@@ -47,28 +49,37 @@ public class SpaceshipController : MonoBehaviour
     private void Update()
     {
         //Grapple
-        if (grappleAction.WasPressedThisFrame() && isControllable)
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+        var ray = cam.ScreenPointToRay(mouseScreenPos);
+        if (isControllable && Physics.Raycast(ray, out var hit, 100f, LayerMask.GetMask("Asteroid")))
         {
-            if (grapple)
+            var asteroid = hit.transform.GetComponentInParent<Asteroid>();
+            if (_hoveredAsteroid != asteroid)
             {
-                Destroy(grapple.gameObject);
+                if (_hoveredAsteroid)
+                {
+                    _hoveredAsteroid.Outline.enabled = false;
+                }
+
+                _hoveredAsteroid = asteroid;
+                if (asteroid)
+                {
+                    _hoveredAsteroid.Outline.enabled = true;
+                }
             }
 
-
-            Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mouseScreenPos);
-            var ray = cam.ScreenPointToRay(mouseScreenPos);
-            if (Physics.Raycast(ray, out var hit, 100f, LayerMask.GetMask("Asteroid")))
+            if (grappleAction.WasPressedThisFrame())
             {
                 grapple = Instantiate(grapplePrefab, transform);
                 grapple.Target = hit.transform.GetComponentInParent<Asteroid>();
             }
-            else
-            {
-                // grapple.Target = new Vector3(mouseWorldPos.x, mouseWorldPos.y, transform.position.z);
-            }
         }
-
+        else if (_hoveredAsteroid)
+        {
+            _hoveredAsteroid.Outline.enabled = false;
+            _hoveredAsteroid = null;
+        }
+        
         if (grappleAction.WasReleasedThisFrame() && grapple)
         {
             Destroy(grapple.gameObject);

@@ -155,8 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   _sidewaysLength: 1.25
-  _maxRange: 100
-  _extendSpeed: 160
+  _maxRange: 120
+  _extendSpeed: 240
   _asteroidLayer:
     serializedVersion: 2
     m_Bits: 256
