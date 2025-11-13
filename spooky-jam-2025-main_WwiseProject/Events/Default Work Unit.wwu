@@ -19,6 +19,41 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{0C68454F-8532-426D-A10C-5EB823E79636}" ShortID="792637951">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM3" ID="{25E875D2-D2AC-4CF2-BAD3-709C97E826C8}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6F357BD8-E147-4F80-A706-F596FB20402C}" ShortID="748153322">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM3_02" ID="{EC41C598-1F64-43C8-817D-9966318139ED}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F83AAB8D-172A-407C-BE72-55888E53A831}" ShortID="229799689">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM4" ID="{1C6108F7-4752-4BD6-85F4-42CF429C8A8B}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{27AC14D3-3D6A-4B09-92A4-C4CDE5F614F6}" ShortID="321289143">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM4_02" ID="{C2FE8E3C-158A-4CAF-B45D-3AFA19B6E2FF}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A143C320-1B84-4928-9B3F-671A2E8237AE}" ShortID="810852014">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM5_End" ID="{050B64F1-6EB9-4F83-9B4C-E1726C3119C9}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Three_Two_One_Go" ID="{5FD0C702-3010-422D-90F5-0802C58F3B0A}">
@@ -38,6 +73,39 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Crowd Cheering" ID="{A0134221-42A1-4845-9F34-440A1D276D94}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Click" ID="{EAE8F241-107F-4CE5-ACC8-5C3010C87BBD}">
+					<ChildrenList>
+						<Action Name="" ID="{0167DEE8-25AE-4FB0-A820-EAC71ADC4ABE}" ShortID="920229178">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Click" ID="{52417FD8-5FD0-43F5-86BD-4CE0305C0D3B}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Grapple" ID="{A27C39D7-CB44-482C-A913-C078316AD2CF}">
+					<ChildrenList>
+						<Action Name="" ID="{0D82344E-5D21-46E5-972B-C5D7989725BD}" ShortID="814503398">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WubGrapple" ID="{08053B0E-30AC-4B78-8F7F-951A0D539924}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Thrust" ID="{88A94BAD-63E1-4684-9F0E-FCA58EF00315}">
+					<ChildrenList>
+						<Action Name="" ID="{7122924E-51A0-41A0-BF0F-7B0858A0C199}" ShortID="532708834">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RocketThruster" ID="{7297849F-EDD6-4039-9330-E03A6C7AD08E}" WorkUnitID="{177A0557-F690-4565-8EC9-7BDE3EBEA929}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

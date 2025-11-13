@@ -1,6 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
+using UnityEngine.InputSystem;
 
 public class Grapple : MonoBehaviour
 {
@@ -20,8 +22,12 @@ public class Grapple : MonoBehaviour
     private ConfigurableJoint _joint;
     private Vector3 _beamStartPosLocal;
 
+    public AK.Wwise.Event GrappleWub;
+
     private void Start()
     {
+        GrappleWub.Post(gameObject);
+
         _ship = GetComponentInParent<SpaceshipController>();
 
         var direction = (Target.transform.position - transform.position).normalized;
@@ -103,6 +109,7 @@ public class Grapple : MonoBehaviour
 
     private void OnDestroy()
     {
+        GrappleWub.Stop(gameObject);
         if (_joint) Destroy(_joint);
         if (_beamPinInstance) Destroy(_beamPinInstance.gameObject);
     }

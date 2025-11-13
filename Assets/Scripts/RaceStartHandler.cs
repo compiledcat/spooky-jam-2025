@@ -10,6 +10,7 @@ public class RaceStartHandler : MonoBehaviour
     public AK.Wwise.Event TTOGo;
     public AK.Wwise.Event BGM;
     public AK.Wwise.Event CrowdCheer;
+    public AK.Wwise.Event Click;
 
     [SerializeField] private RectTransform _lapTimer;
     [SerializeField] private RectTransform _leaderboard;
@@ -66,6 +67,7 @@ public class RaceStartHandler : MonoBehaviour
         TTOGo.Post(gameObject);
         BGM.Post(gameObject);
         CrowdCheer.Post(gameObject);
+        Click.Post(gameObject);
 
         if (_debugSpeedUp) Time.timeScale = 4;
 

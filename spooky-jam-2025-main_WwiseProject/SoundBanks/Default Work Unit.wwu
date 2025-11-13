@@ -6,8 +6,11 @@
 				<SoundBank Name="Maain" ID="{DB19DD85-AA6A-40CD-AE1D-B78BAB119F3E}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Three_Two_One_Go" ID="{5FD0C702-3010-422D-90F5-0802C58F3B0A}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Thrust" ID="{88A94BAD-63E1-4684-9F0E-FCA58EF00315}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="CrowdCheering" ID="{A2B71F6A-3BA3-46C2-9A29-DE0A3681EF0A}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Grapple" ID="{A27C39D7-CB44-482C-A913-C078316AD2CF}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="BGM" ID="{33AE4BD6-CA38-4A83-9FD5-FCD05CE3E7FE}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Click" ID="{EAE8F241-107F-4CE5-ACC8-5C3010C87BBD}" WorkUnitID="{01107C15-8DD1-40D1-809E-D91D066B2E6D}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

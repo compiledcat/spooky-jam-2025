@@ -6,6 +6,8 @@ public class SpaceshipController : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private Grapple grapplePrefab;
     private Grapple grapple;
+    public AK.Wwise.Event GrappleLaunch;
+
 
     [Space] [SerializeField] private Transform _yolk;
     [SerializeField] private Transform _greebleHead;
@@ -15,6 +17,8 @@ public class SpaceshipController : MonoBehaviour
 
     private InputAction moveAction;
     private InputAction grappleAction;
+
+
 
     private Camera cam;
 
@@ -38,6 +42,8 @@ public class SpaceshipController : MonoBehaviour
 
         cam = Camera.main!;
         RaceStartHandler.OnCountdownEnd.AddListener(() => isControllable = true);
+
+
     }
 
     private void OnDrawGizmosSelected()
@@ -128,4 +134,6 @@ public class SpaceshipController : MonoBehaviour
         if (checkpointNum <= reachedCheckpoint) return;
         reachedCheckpoint = checkpointNum;
     }
+
+ 
 }

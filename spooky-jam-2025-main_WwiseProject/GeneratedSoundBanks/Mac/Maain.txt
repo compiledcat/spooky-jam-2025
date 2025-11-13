@@ -2,18 +2,45 @@ Event	ID	Name			Wwise Object Path	Notes
 	412724365	BGM			\Default Work Unit\BGM	
 	625825150	Three_Two_One_Go			\Default Work Unit\Three_Two_One_Go	
 	751466621	CrowdCheering			\Default Work Unit\CrowdCheering	
+	1584507803	Click			\Default Work Unit\Click	
+	1703472526	Grapple			\Default Work Unit\Grapple	
+	2197345151	Thrust			\Default Work Unit\Thrust	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	412724365	BGM			\Default Work Unit\BGM	
 
 State	ID	Name	State Group			Notes
+	513886825	BGM3_02	BGM			
+	574432887	BGM4_01	BGM			
 	748895195	None	BGM			
+	1189781955	BGM4	BGM			
+	1189781956	BGM3	BGM			
 	1189781957	BGM2	BGM			
 	1189781958	BGM1	BGM			
+	2659455768	BGM5_End	BGM			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2470809313	RTPCSpeed			\Default Work Unit\RTPCSpeed	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	33302142	BGM1	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\85\{85F4D563-65C5-F2B4-1C19-7B6587CCCDB8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM1		594292
-	243485007	3, 2, 1___ Go!	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\F3\{F3EBB42B-E1EA-6308-92AA-A6F892EA4350}.wem		\Actor-Mixer Hierarchy\Default Work Unit\3, 2, 1___ Go!		2586204
-	489511010	BGM2	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\C8\{C82F4B0D-5F7E-CA6E-E101-E0FC82784BE0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM2		596052
-	671507770	Crowd Cheering	E:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\D6\{D6206750-F44B-5E8F-7157-5A33BD8C1C21}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd Cheering		1687012
+	13016930	WubGrapple	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\31\{31813F70-5319-31F9-B937-6B9D27402FC4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WubGrapple		31180
+	33302142	BGM1	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\A5\{A550BC8D-3BC4-7CB8-88CD-CA78086A09F7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM1		594292
+	103937579	ButtonClick-001	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\CB\{CBA08F88-A9C7-7596-970D-3A158F4CB884}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-001		67108
+	146271980	ButtonClick-008	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\F5\{F55E4836-C0EF-6165-E196-B043DC3723E9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-008		217504
+	210129626	ButtonClick-009	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\F1\{F1BAA17B-5173-5858-87EC-6B2439CA6C31}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-009		149332
+	243485007	3, 2, 1___ Go!	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\F3\{F3EBB42B-E1EA-6308-92AA-A6F892EA4350}.wem		\Actor-Mixer Hierarchy\Default Work Unit\3, 2, 1___ Go!		2586204
+	307458505	BGM4	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\C8\{C8DB394D-FB6E-AD36-B699-7E51B4B6DD57}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM4		2378896
+	489511010	BGM2	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\10\{10D1DBBA-BAC8-CF7D-EE86-57AB3703F9FC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM2		596052
+	505451213	BGM3	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\A2\{A22411FE-6F25-D20A-A173-0CC164C1AD7E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM3		2379812
+	593724496	ButtonClick-003	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\35\{35A408C6-98F0-3648-A034-9154C6F44023}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-003		60260
+	625292124	ButtonClick-005	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\8C\{8C479AE9-B1A5-8489-419C-BDCA5BCAE1E5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-005		101036
+	630972672	RocketThruster	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\42\{42A31890-4A7F-7095-9E4E-44D78CDA69B3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\RocketThruster		553652
+	640960429	ButtonClick-006	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\1A\{1A8AABB0-F33C-5F90-EDFB-BBFE7495164A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-006		139636
+	671507770	Crowd Cheering	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\9F\{9FD56DB2-0A90-1F76-4368-9087C1563382}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Crowd Cheering		1687012
+	678163493	BGM5_End	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\3C\{3C6B47C0-58FD-C3EC-223E-77C2CEC5F704}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM5_End		217624
+	721908082	ButtonClick-002	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\F6\{F6CD26A2-3372-17AB-D3E1-47D7866C95A4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-002		61728
+	728273789	BGM3_02	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\21\{21EBC6E1-9973-034F-6E05-0ED4FE50620E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM3_02		2380620
+	801647275	ButtonClick-007	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\3B\{3B6CA529-ACDE-C0CE-BD58-469653B6E275}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-007		103680
+	950788176	BGM4_02	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\DB\{DBAEDB9F-B9DF-D1AB-BA2B-5A1124389896}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM\BGM4_02		2364996
+	1056824938	ButtonClick-004	F:\Uni\gleeble race\spooky-jam-2025-main\spooky-jam-2025-main_WwiseProject\.cache\A1\{A1123A19-CFC8-B88F-8605-D8C3447D4402}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Click\ButtonClick-004		95968
 

@@ -10,18 +10,50 @@
     "Type": "User",
     "GUID": "{DB19DD85-AA6A-40CD-AE1D-B78BAB119F3E}",
     "Language": "SFX",
-    "Hash": "{CC551510-5151-CDD9-7339-FA34CAD5F8D5}",
+    "Hash": "{646CE47E-07F8-DF00-1292-38398342F30E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Maain",
     "ShortName": "Maain",
     "Path": "Maain.bnk",
     "Media": [
+     {
+      "Id": "13016930",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WubGrapple.wav",
+      "CachePath": "31/{31813F70-5319-31F9-B937-6B9D27402FC4}.wem"
+     },
      {
       "Id": "33302142",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
-      "CachePath": "85/{85F4D563-65C5-F2B4-1C19-7B6587CCCDB8}.wem"
+      "CachePath": "A5/{A550BC8D-3BC4-7CB8-88CD-CA78086A09F7}.wem"
+     },
+     {
+      "Id": "103937579",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-001.wav",
+      "CachePath": "CB/{CBA08F88-A9C7-7596-970D-3A158F4CB884}.wem"
+     },
+     {
+      "Id": "146271980",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-008.wav",
+      "CachePath": "F5/{F55E4836-C0EF-6165-E196-B043DC3723E9}.wem"
+     },
+     {
+      "Id": "210129626",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-009.wav",
+      "CachePath": "F1/{F1BAA17B-5173-5858-87EC-6B2439CA6C31}.wem"
      },
      {
       "Id": "243485007",
@@ -32,12 +64,60 @@
       "CachePath": "F3/{F3EBB42B-E1EA-6308-92AA-A6F892EA4350}.wem"
      },
      {
+      "Id": "307458505",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "C8/{C8DB394D-FB6E-AD36-B699-7E51B4B6DD57}.wem"
+     },
+     {
       "Id": "489511010",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
-      "CachePath": "C8/{C82F4B0D-5F7E-CA6E-E101-E0FC82784BE0}.wem"
+      "CachePath": "10/{10D1DBBA-BAC8-CF7D-EE86-57AB3703F9FC}.wem"
+     },
+     {
+      "Id": "505451213",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "A2/{A22411FE-6F25-D20A-A173-0CC164C1AD7E}.wem"
+     },
+     {
+      "Id": "593724496",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-003.wav",
+      "CachePath": "35/{35A408C6-98F0-3648-A034-9154C6F44023}.wem"
+     },
+     {
+      "Id": "625292124",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-005.wav",
+      "CachePath": "8C/{8C479AE9-B1A5-8489-419C-BDCA5BCAE1E5}.wem"
+     },
+     {
+      "Id": "630972672",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "RocketThruster.wav",
+      "CachePath": "42/{42A31890-4A7F-7095-9E4E-44D78CDA69B3}.wem"
+     },
+     {
+      "Id": "640960429",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-006.wav",
+      "CachePath": "1A/{1A8AABB0-F33C-5F90-EDFB-BBFE7495164A}.wem"
      },
      {
       "Id": "671507770",
@@ -45,7 +125,55 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Crowd Cheering.wav",
-      "CachePath": "D6/{D6206750-F44B-5E8F-7157-5A33BD8C1C21}.wem"
+      "CachePath": "9F/{9FD56DB2-0A90-1F76-4368-9087C1563382}.wem"
+     },
+     {
+      "Id": "678163493",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "3C/{3C6B47C0-58FD-C3EC-223E-77C2CEC5F704}.wem"
+     },
+     {
+      "Id": "721908082",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-002.wav",
+      "CachePath": "F6/{F6CD26A2-3372-17AB-D3E1-47D7866C95A4}.wem"
+     },
+     {
+      "Id": "728273789",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "21/{21EBC6E1-9973-034F-6E05-0ED4FE50620E}.wem"
+     },
+     {
+      "Id": "801647275",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-007.wav",
+      "CachePath": "3B/{3B6CA529-ACDE-C0CE-BD58-469653B6E275}.wem"
+     },
+     {
+      "Id": "950788176",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav",
+      "CachePath": "DB/{DBAEDB9F-B9DF-D1AB-BA2B-5A1124389896}.wem"
+     },
+     {
+      "Id": "1056824938",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ButtonClick-004.wav",
+      "CachePath": "A1/{A1123A19-CFC8-B88F-8605-D8C3447D4402}.wem"
      }
     ],
     "Events": [
@@ -60,7 +188,60 @@
         "Id": "33302142"
        },
        {
+        "Id": "307458505"
+       },
+       {
         "Id": "489511010"
+       },
+       {
+        "Id": "505451213"
+       },
+       {
+        "Id": "678163493"
+       },
+       {
+        "Id": "728273789"
+       },
+       {
+        "Id": "950788176"
+       }
+      ]
+     },
+     {
+      "Id": "1584507803",
+      "Name": "Click",
+      "ObjectPath": "\\Events\\Default Work Unit\\Click",
+      "GUID": "{EAE8F241-107F-4CE5-ACC8-5C3010C87BBD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.31335416",
+      "DurationMax": "1.1323333",
+      "MediaRefs": [
+       {
+        "Id": "103937579"
+       },
+       {
+        "Id": "146271980"
+       },
+       {
+        "Id": "210129626"
+       },
+       {
+        "Id": "593724496"
+       },
+       {
+        "Id": "625292124"
+       },
+       {
+        "Id": "640960429"
+       },
+       {
+        "Id": "721908082"
+       },
+       {
+        "Id": "801647275"
+       },
+       {
+        "Id": "1056824938"
        }
       ]
      },
@@ -78,6 +259,18 @@
       ]
      },
      {
+      "Id": "1703472526",
+      "Name": "Grapple",
+      "ObjectPath": "\\Events\\Default Work Unit\\Grapple",
+      "GUID": "{A27C39D7-CB44-482C-A913-C078316AD2CF}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "13016930"
+       }
+      ]
+     },
+     {
       "Id": "625825150",
       "Name": "Three_Two_One_Go",
       "ObjectPath": "\\Events\\Default Work Unit\\Three_Two_One_Go",
@@ -90,10 +283,30 @@
         "Id": "243485007"
        }
       ]
+     },
+     {
+      "Id": "2197345151",
+      "Name": "Thrust",
+      "ObjectPath": "\\Events\\Default Work Unit\\Thrust",
+      "GUID": "{88A94BAD-63E1-4684-9F0E-FCA58EF00315}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "630972672"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2470809313",
+      "Name": "RTPCSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPCSpeed",
+      "GUID": "{65D00827-2E5B-4056-86F9-52851D2AF018}"
      }
     ]
    }
   ],
-  "FileHash": "{B3976659-15D6-5D58-B500-CB3EBF2E1248}"
+  "FileHash": "{28AD97AC-2CEB-0AD0-862F-789B92215E2F}"
  }
 }

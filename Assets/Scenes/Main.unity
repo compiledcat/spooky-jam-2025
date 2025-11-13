@@ -498,7 +498,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4362834204441150750, guid: 940ed80844f8e1e488d3139071abe7ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1488014267}
+    - targetCorrespondingSourceObject: {fileID: 4362834204441150750, guid: 940ed80844f8e1e488d3139071abe7ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1488014266}
   m_SourcePrefab: {fileID: 100100000, guid: 940ed80844f8e1e488d3139071abe7ae, type: 3}
 --- !u!4 &106619932 stripped
 Transform:
@@ -3318,6 +3324,8 @@ GameObject:
   m_Component:
   - component: {fileID: 686414820}
   - component: {fileID: 686414816}
+  - component: {fileID: 686414822}
+  - component: {fileID: 686414821}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -4211,6 +4219,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 83bf8dbc8a4f5144983bf01612fd7e90, type: 2}
+  Click:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 83c73dec9b2a7c24b8c8ed171f3438a5, type: 2}
   _lapTimer: {fileID: 1960479188}
   _leaderboard: {fileID: 1944144329}
   _title: {fileID: 583296029}
@@ -6559,7 +6571,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4362834204441150750, guid: 940ed80844f8e1e488d3139071abe7ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1479069205}
+    - targetCorrespondingSourceObject: {fileID: 4362834204441150750, guid: 940ed80844f8e1e488d3139071abe7ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1479069204}
   m_SourcePrefab: {fileID: 100100000, guid: 940ed80844f8e1e488d3139071abe7ae, type: 3}
 --- !u!4 &1507074739 stripped
 Transform:
