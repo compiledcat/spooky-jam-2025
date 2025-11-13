@@ -248,3 +248,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2529272576819150517, guid: 14a045f85385a3a47acfcc0d862fbe07, type: 3}
   m_PrefabInstance: {fileID: 8451053880493436247}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7574243367192147964}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{F448AC7A-8222-CF3B-5A99-985F787EAFFD}",
+    "Hash": "{52E97D0E-50B1-FD47-0DAB-3123DF60911D}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -42,6 +42,14 @@
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
     ],
+    "GameParameters": [
+     {
+      "Id": "2470809313",
+      "Name": "RTPCSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\RTPCSpeed",
+      "GUID": "{65D00827-2E5B-4056-86F9-52851D2AF018}"
+     }
+    ],
     "StateGroups": [
      {
       "Id": "412724365",
@@ -50,10 +58,34 @@
       "GUID": "{28D0235F-4ACC-4600-A983-152990D8B0D0}",
       "States": [
        {
+        "Id": "513886825",
+        "Name": "BGM3_02",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM\\BGM3_02",
+        "GUID": "{F662CC53-EA29-4359-B896-842BDE62C0C7}"
+       },
+       {
+        "Id": "574432887",
+        "Name": "BGM4_01",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM\\BGM4_01",
+        "GUID": "{9A637AC4-749F-4CFF-B2C0-4CA155F9585E}"
+       },
+       {
         "Id": "748895195",
         "Name": "None",
         "ObjectPath": "\\States\\Default Work Unit\\BGM\\None",
         "GUID": "{80629DCA-39B3-4194-B9EB-B8AB13BB3CC4}"
+       },
+       {
+        "Id": "1189781955",
+        "Name": "BGM4",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM\\BGM4",
+        "GUID": "{B2934F09-1533-402A-84AE-480280F8214D}"
+       },
+       {
+        "Id": "1189781956",
+        "Name": "BGM3",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM\\BGM3",
+        "GUID": "{4BDAF243-83A4-49BB-9A6D-67AB1C1F84C8}"
        },
        {
         "Id": "1189781957",
@@ -66,12 +98,18 @@
         "Name": "BGM1",
         "ObjectPath": "\\States\\Default Work Unit\\BGM\\BGM1",
         "GUID": "{B59268F7-471E-4BC8-B152-A56D80867EAB}"
+       },
+       {
+        "Id": "2659455768",
+        "Name": "BGM5_End",
+        "ObjectPath": "\\States\\Default Work Unit\\BGM\\BGM5_End",
+        "GUID": "{CE1B40C0-F668-4BD5-B3F6-DB8B9431D77A}"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{EA857087-B961-12B4-9EBB-F80A05360286}"
+  "FileHash": "{6F3582C4-611C-3246-39CF-1E8C3EBAC88C}"
  }
 }

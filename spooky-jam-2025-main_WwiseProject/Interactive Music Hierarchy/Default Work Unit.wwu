@@ -1,6 +1,372 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{336206EB-DF89-4938-95A2-955F70133163}" SchemaVersion="123">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{336206EB-DF89-4938-95A2-955F70133163}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{336206EB-DF89-4938-95A2-955F70133163}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="New Music Playlist Container" ID="{C78E3F9C-9B95-4C4A-AB76-B0D2C0F44AD8}" ShortID="932570052">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D19D9F2F-D76D-45E9-AE66-A591AD308F39}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{185B4BC6-1AFE-4C6E-8DE7-6C6CFB01D77B}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{BD1DD03F-DB6F-4D30-9F18-FE3573030312}" ShortID="310125808">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{153A37F9-4F21-4308-A528-89706A514FB4}" ShortID="389515457">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{687E77C1-D809-459C-BDF0-0593CF18421C}" WorkUnitID="{336206EB-DF89-4938-95A2-955F70133163}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+										<MusicPlaylistItem Name="" ID="{4825F5E1-2642-4800-979E-F54D08EDD30F}" ShortID="984373552">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand_01" ID="{90A03F6D-59AC-442D-A0D5-434360308719}" WorkUnitID="{336206EB-DF89-4938-95A2-955F70133163}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{F47B3B48-773F-4328-B4FA-AB99AF6A9CF3}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{AACA7737-88E9-4C1F-A7D4-0713BF22102A}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{687E77C1-D809-459C-BDF0-0593CF18421C}" ShortID="185450807">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="164129.041666667"/>
+								<Property Name="Tempo" Type="Real64" Value="155"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D19D9F2F-D76D-45E9-AE66-A591AD308F39}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{185B4BC6-1AFE-4C6E-8DE7-6C6CFB01D77B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{873F4E98-B276-4511-AD28-69ACC0545F6C}" ShortID="726866984">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{185B4BC6-1AFE-4C6E-8DE7-6C6CFB01D77B}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{A5B14D4E-C3D8-4E77-85CA-8060E15D7217}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{7C9CF9A4-9CFC-40F1-950A-10F6D8112169}">
+											<Language>SFX</Language>
+											<AudioFile>OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="505077344"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{C66D7330-E7AD-4717-B708-DF5D5F38A717}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{AC2E6018-77A9-43CE-9D58-67C693983D4A}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="3094.49403606382"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{7C9CF9A4-9CFC-40F1-950A-10F6D8112169}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{774B3977-BD49-46FA-8339-099A0EB8F321}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>3.09449</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{E15AD268-C7DD-4C46-980F-523E243ACAD6}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>3.09449</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{C0561ED2-784F-464D-A043-FE8C056B8809}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>3.09449</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{C45F9B07-5DB1-4F2D-916E-F4247914D4D8}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{6615BC97-F096-4EE2-A7A2-3184273A7411}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="116129.041666667"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+						<MusicSegment Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand_01" ID="{90A03F6D-59AC-442D-A0D5-434360308719}" ShortID="346721561">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="164129.041666667"/>
+								<Property Name="Tempo" Type="Real64" Value="155"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D19D9F2F-D76D-45E9-AE66-A591AD308F39}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{185B4BC6-1AFE-4C6E-8DE7-6C6CFB01D77B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{5D89E1FC-8ED3-413B-8AC4-0E87554C0DE4}" ShortID="686746929">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{185B4BC6-1AFE-4C6E-8DE7-6C6CFB01D77B}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{BCBC7A76-6B14-4E75-80F0-13D3EAC9D4AB}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{149D1134-A080-4751-BF47-3F85937E2F81}">
+											<Language>SFX</Language>
+											<AudioFile>OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="505077344"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{5458CD79-54DC-4FC9-B024-280E94C7BCD7}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{1E857C7B-9B69-4435-A6A1-5FDF24C6E990}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="3094.20708170477"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="6194.90415269066"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-3094.20708170477"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="OutOfThisWorld_MainRaceTheme_MainRaceThemeElasticBand" ID="{149D1134-A080-4751-BF47-3F85937E2F81}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{15EE2791-7E50-4159-AA73-5B68A8A3AAD2}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.09421</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>6.1949</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{80A7E7C2-D052-43D7-A2DE-8526B2A05610}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.09421</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>6.1949</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{3DA3213F-8117-4FB2-B011-22D8C295F1BF}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.09421</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>6.1949</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{DDE71863-4EBB-413E-B7B6-3F54DBB5FEC0}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{8608A013-101B-413E-82DE-ED7E5272BCCB}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="116129.041666667"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

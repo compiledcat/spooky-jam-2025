@@ -5,13 +5,26 @@
 			<ChildrenList>
 				<StateGroup Name="BGM" ID="{28D0235F-4ACC-4600-A983-152990D8B0D0}">
 					<PropertyList>
-						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="3"/>
 					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{80629DCA-39B3-4194-B9EB-B8AB13BB3CC4}"/>
 						<State Name="BGM1" ID="{B59268F7-471E-4BC8-B152-A56D80867EAB}"/>
 						<State Name="BGM2" ID="{A05924D1-382A-462E-9D96-B417B3CAC379}"/>
+						<State Name="BGM3" ID="{4BDAF243-83A4-49BB-9A6D-67AB1C1F84C8}"/>
+						<State Name="BGM4" ID="{B2934F09-1533-402A-84AE-480280F8214D}"/>
+						<State Name="BGM5_End" ID="{CE1B40C0-F668-4BD5-B3F6-DB8B9431D77A}"/>
+						<State Name="BGM3_02" ID="{F662CC53-EA29-4359-B896-842BDE62C0C7}"/>
+						<State Name="BGM4_01" ID="{9A637AC4-749F-4CFF-B2C0-4CA155F9585E}"/>
 					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="BGM3_02" ID="{F662CC53-EA29-4359-B896-842BDE62C0C7}"/>
+							<EndState Name="BGM4_01" ID="{9A637AC4-749F-4CFF-B2C0-4CA155F9585E}"/>
+							<Time>0</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
